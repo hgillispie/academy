@@ -1,0 +1,2186 @@
+import { Course, CourseSection } from '@/types/course';
+
+export const builderPublishPlatformCourses: Course[] = [
+  {
+    id: 'builder-101-content-models',
+    title: 'Builder 101: Content Model Types',
+    description:
+      'Learn about the three fundamental content model types in Builder.io: Pages, Sections, and Data models.',
+    level: 'Builder 101',
+    duration: '15 minutes',
+    instructor: {
+      name: 'Madison Dickson',
+    },
+    modules: [
+      {
+        id: 'content-models-intro',
+        title: 'Understanding Content Models',
+        description: "Introduction to Builder.io's content model types and their purposes",
+        videoUrl: 'https://share.descript.com/view/xh4swfXfRqF',
+        docsUrl: 'https://www.builder.io/c/docs/models-intro',
+        order: 1,
+        questions: [
+          {
+            id: 'q1',
+            text: 'What are the three data model types in Builder.io?',
+            type: 'single',
+            options: [
+              'Pages, Sections, and Components',
+              'Pages, Sections, and Data models',
+              'Templates, Sections, and Data models',
+              'Components, Widgets, and Pages',
+            ],
+            correctAnswers: ['Pages, Sections, and Data models'],
+          },
+          {
+            id: 'q2',
+            text: 'According to Madison, what is a key pain point of traditional headless CMS platforms?',
+            type: 'single',
+            options: [
+              'Limited visual customization options',
+              'Excessive visual editing capabilities',
+              'Creating content without visual context of the final experience',
+              'Too many template options',
+            ],
+            correctAnswers: ['Creating content without visual context of the final experience'],
+          },
+          {
+            id: 'q3',
+            text: 'Which Builder.io model type provides traditional headless CMS functionality?',
+            type: 'single',
+            options: ['Page models', 'Section models', 'Data models', 'All of the above'],
+            correctAnswers: ['Data models'],
+          },
+          {
+            id: 'q4',
+            text: "Builder's platform was designed to unite content creation with its visual presentation.",
+            type: 'single',
+            options: ['True', 'False'],
+            correctAnswers: ['True'],
+          },
+          {
+            id: 'q5',
+            text: 'According to the video, which type of content is ideal for Structured Data models?',
+            type: 'single',
+            options: [
+              'Blog posts with rich media',
+              'Product definitions and header links',
+              'Landing pages',
+              'Interactive elements',
+            ],
+            correctAnswers: ['Product definitions and header links'],
+          },
+          {
+            id: 'q6',
+            text: "What does Builder.io's visual development platform aim to empower marketers to do?",
+            type: 'single',
+            options: [
+              'Write better content',
+              'Build and optimize experiences independently',
+              'Code JavaScript',
+              'Manage server infrastructure',
+            ],
+            correctAnswers: ['Build and optimize experiences independently'],
+          },
+          {
+            id: 'q7',
+            text: 'What is the difference between a section and a page?',
+            type: 'single',
+            options: [
+              'Pages are only for desktop while sections are for mobile',
+              'Sections are components within pages',
+              'Pages are full webpages while sections are portions of content that can be placed within pages',
+              "There is no difference, they're just named differently",
+            ],
+            correctAnswers: [
+              'Pages are full webpages while sections are portions of content that can be placed within pages',
+            ],
+          },
+          {
+            id: 'q8',
+            text: "What's Builder's best practice recommendation on when to use page model versus section model?",
+            type: 'single',
+            options: [
+              'Always use page models for simplicity',
+              'Use page models for full pages and section models for reusable content blocks',
+              'Use section models for everything for better performance',
+              'Only use page models when working with e-commerce sites',
+            ],
+            correctAnswers: [
+              'Use page models for full pages and section models for reusable content blocks',
+            ],
+          },
+        ],
+      },
+    ],
+    tags: ['Dev', 'Designer'],
+  },
+  {
+    id: 'builder-101-visual-editor',
+    title: 'Builder 101: Visual Editor Overview',
+    description: "Learn how to use Builder.io's visual editor effectively",
+    level: 'Builder 101',
+    duration: '20 minutes',
+    instructor: {
+      name: 'Madison Dickson',
+    },
+    modules: [
+      {
+        id: 'visual-editor-intro',
+        title: 'Visual Editor Basics',
+        description: "Get started with Builder.io's visual editor",
+        videoUrl: 'https://youtu.be/dvIKGUPLjyc',
+        docsUrl: 'https://www.builder.io/c/docs/visual-editor',
+        order: 1,
+        questions: [
+          {
+            id: 'q1',
+            text: 'According to the video, what does Builder value to guide their product development?',
+            type: 'single',
+            options: ['Developer expertise', 'User input', 'Market trends', 'Competitive analysis'],
+            correctAnswers: ['User input'],
+          },
+          {
+            id: 'q2',
+            text: "Where can users find shortcuts to Builder's documentation and knowledge base?",
+            type: 'single',
+            options: [
+              'In the top navigation bar',
+              'In the settings menu',
+              'In the question mark help button in the bottom right',
+              'In the user profile section',
+            ],
+            correctAnswers: ['In the question mark help button in the bottom right'],
+          },
+          {
+            id: 'q3',
+            text: "Which of the following support options are available through Builder's help system?",
+            type: 'multiple',
+            options: [
+              'Documentation and knowledge base',
+              'Community forum',
+              'Contact support',
+              'Feature suggestion form',
+              'Sales team contact',
+            ],
+            correctAnswers: [
+              'Documentation and knowledge base',
+              'Community forum',
+              'Contact support',
+              'Feature suggestion form',
+            ],
+          },
+          {
+            id: 'q4',
+            text: "How does the presenter describe the impact of Builder's visual CMS?",
+            type: 'single',
+            options: [
+              "It can transform your website's appearance",
+              "It can transform your digital teams' efficiency and effectiveness",
+              'It can transform your development process',
+              'It can transform your content strategy',
+            ],
+            correctAnswers: ["It can transform your digital teams' efficiency and effectiveness"],
+          },
+          {
+            id: 'q5',
+            text: "What key features make Builder's visual editor user-friendly for content creators?",
+            type: 'multiple',
+            options: [
+              'Drag and drop interface',
+              'Real-time preview',
+              'Content blocks system',
+              'No coding required',
+              'Built-in collaboration tools',
+            ],
+            correctAnswers: [
+              'Drag and drop interface',
+              'Real-time preview',
+              'Content blocks system',
+              'No coding required',
+            ],
+          },
+          {
+            id: 'q6',
+            text: "How does Builder's visual editor facilitate collaboration between team members?",
+            type: 'single',
+            options: [
+              'By limiting access to specific roles',
+              'By allowing only developers to make structural changes',
+              'Through real-time shared editing, comments, and preview links',
+              'By requiring approval workflows for all content changes',
+            ],
+            correctAnswers: ['Through real-time shared editing, comments, and preview links'],
+          },
+          {
+            id: 'q7',
+            text: 'Which layout option does the presenter personally prefer in the Builder editor?',
+            type: 'single',
+            options: [
+              'Single column layout',
+              'Two column layout',
+              'Three column layout',
+              'Full-screen layout',
+            ],
+            correctAnswers: ['Two column layout'],
+          },
+          {
+            id: 'q8',
+            text: "What is the purpose of the x-ray mode in Builder's visual editor?",
+            type: 'single',
+            options: [
+              'To view the code behind each component',
+              'To add spacing and outline every element to see content structure',
+              'To check page load performance',
+              'To detect SEO issues',
+            ],
+            correctAnswers: ['To add spacing and outline every element to see content structure'],
+          },
+          {
+            id: 'q9',
+            text: 'On which tier plans does Builder include content insights with heat map tracking?',
+            type: 'single',
+            options: ['All plans', 'Free tier plans', 'Paid tier plans', 'Enterprise plans only'],
+            correctAnswers: ['Enterprise plans only'],
+          },
+          {
+            id: 'q10',
+            text: "What visual indicator shows that you're hovering over Builder-driven content that can be edited?",
+            type: 'single',
+            options: [
+              'Red dotted outline',
+              'Green checkmark',
+              'Blue selection overlay',
+              'Yellow warning icon',
+            ],
+            correctAnswers: ['Blue selection overlay'],
+          },
+          {
+            id: 'q11',
+            text: "What is the primary purpose of the Layers tab in Builder's visual editor?",
+            type: 'single',
+            options: [
+              'To change the visual styles of elements',
+              'To see content hierarchy and relationships between elements',
+              'To add animation effects',
+              'To configure SEO settings',
+            ],
+            correctAnswers: ['To see content hierarchy and relationships between elements'],
+          },
+          {
+            id: 'q12',
+            text: 'What action can you perform by double-clicking a layer in the Layers tab?',
+            type: 'single',
+            options: [
+              'Delete the layer',
+              'Duplicate the layer',
+              'Rename the layer',
+              "Change the layer's visibility",
+            ],
+            correctAnswers: ['Rename the layer'],
+          },
+          {
+            id: 'q13',
+            text: 'Which tab would you use to add animation effects to your content?',
+            type: 'single',
+            options: ['Data tab', 'Styles tab', 'Animate tab', 'Comments tab'],
+            correctAnswers: ['Animate tab'],
+          },
+          {
+            id: 'q14',
+            text: 'Which feature allows you to see who made changes to content and restore to a previous state if needed?',
+            type: 'single',
+            options: ['Versions tab', 'History tab', 'AB Tests tab', 'Insights tab'],
+            correctAnswers: ['History tab'],
+          },
+          {
+            id: 'q15',
+            text: "How does Builder's interface indicate that another team member is editing the same content simultaneously?",
+            type: 'single',
+            options: [
+              'A notification appears',
+              'Their cursor appears on the screen',
+              'A lock icon appears next to the content',
+              'The content is highlighted in a different color',
+            ],
+            correctAnswers: ['Their cursor appears on the screen'],
+          },
+          {
+            id: 'q16',
+            text: 'What functionality does the targeting button provide?',
+            type: 'single',
+            options: [
+              'SEO optimization settings',
+              'Shows how many target values the content entry has configured',
+              'Content translation options',
+              'Device-specific display settings',
+            ],
+            correctAnswers: ['Shows how many target values the content entry has configured'],
+          },
+          {
+            id: 'q17',
+            text: 'Which of the following can you do with the preview button?',
+            type: 'multiple',
+            options: [
+              'Get a link to preview content without publishing',
+              'Generate a QR code for mobile testing',
+              'Share the preview link with others for approval',
+              'Schedule content publication',
+              'Run performance tests',
+            ],
+            correctAnswers: [
+              'Get a link to preview content without publishing',
+              'Generate a QR code for mobile testing',
+              'Share the preview link with others for approval',
+            ],
+          },
+        ],
+      },
+    ],
+    tags: ['Editor', 'Designer'],
+  },
+  {
+    id: 'builder-101-built-in-components',
+    title: 'Builder 101: Built-in Components',
+    description: "Learn about Builder.io's built-in components and how to use them effectively",
+    level: 'Builder 101',
+    duration: '25 minutes',
+    instructor: {
+      name: 'Madison Dickson',
+    },
+    modules: [
+      {
+        id: 'built-in-components-intro',
+        title: 'Understanding Built-in Components',
+        description: 'Learn about the core components available in Builder.io',
+        videoUrl: 'https://share.descript.com/view/ghdMOsN7zd9',
+        docsUrl:
+          'https://www.builder.io/c/docs/component-api-reference#built-in-component-api-reference',
+        order: 1,
+        questions: [
+          {
+            id: 'q1',
+            text: 'What is the Box block in Builder.io most comparable to in HTML?',
+            type: 'single',
+            options: [
+              'A span element',
+              'A div element',
+              'A paragraph element',
+              'A section element',
+            ],
+            correctAnswers: ['A div element'],
+          },
+          {
+            id: 'q2',
+            text: 'How can you quickly access an insert menu when editing text in Builder?',
+            type: 'single',
+            options: [
+              'Press the Tab key',
+              'Type a forward slash (/)',
+              'Press Ctrl+Space',
+              'Right-click in the text field',
+            ],
+            correctAnswers: ['Type a forward slash (/)'],
+          },
+          {
+            id: 'q3',
+            text: 'Where can you configure hover state designs for a Button block?',
+            type: 'single',
+            options: [
+              'In the Button properties panel',
+              'In the Styles tab under state options',
+              'In the Animate tab by setting the trigger to hover',
+              'In the Advanced settings menu',
+            ],
+            correctAnswers: ['In the Styles tab under state options'],
+          },
+          {
+            id: 'q4',
+            text: 'What happens when you drag another block into an Image block?',
+            type: 'single',
+            options: [
+              'The image becomes a background for the new block',
+              'An error occurs as images cannot contain other blocks',
+              'The new block replaces the image',
+              'The blocks appear side by side',
+            ],
+            correctAnswers: ['The image becomes a background for the new block'],
+          },
+          {
+            id: 'q5',
+            text: "Which of the following is a benefit of using Builder's Image Block instead of background images?",
+            type: 'single',
+            options: [
+              'Easier positioning of the image',
+              'Better SEO rankings',
+              'Image optimization using web standards best practices',
+              'Faster loading times on mobile devices only',
+            ],
+            correctAnswers: ['Image optimization using web standards best practices'],
+          },
+          {
+            id: 'q6',
+            text: 'Which shortcut can you use to make text bold in the Builder text editor?',
+            type: 'single',
+            options: [
+              'Ctrl/Command + I',
+              'Ctrl/Command + B',
+              'Ctrl/Command + U',
+              'Ctrl/Command + T',
+            ],
+            correctAnswers: ['Ctrl/Command + B'],
+          },
+          {
+            id: 'q7',
+            text: 'What options does Builder provide for styling text?',
+            type: 'multiple',
+            options: [
+              'Directly in the rich text editor field',
+              'Using the Styles tab in the editor',
+              'Through CSS custom properties',
+              'Via global theme settings',
+            ],
+            correctAnswers: [
+              'Directly in the rich text editor field',
+              'Using the Styles tab in the editor',
+              'Through CSS custom properties',
+            ],
+          },
+          {
+            id: 'q8',
+            text: 'What is a key feature of the Columns Block in Builder?',
+            type: 'single',
+            options: [
+              'It always maintains equal width columns',
+              'It creates evenly spaced areas that collapse into a single column on mobile',
+              'It requires manual mobile styling',
+              'It can only contain text elements',
+            ],
+            correctAnswers: [
+              'It creates evenly spaced areas that collapse into a single column on mobile',
+            ],
+          },
+          {
+            id: 'q9',
+            text: 'How can you modify column sizing in the Columns Block?',
+            type: 'multiple',
+            options: [
+              'Click and drag directly in the editor',
+              'Use the options menu to manually enter values',
+              'Apply percentage values in the Styles tab',
+              'Use preset column templates',
+            ],
+            correctAnswers: [
+              'Click and drag directly in the editor',
+              'Use the options menu to manually enter values',
+              'Apply percentage values in the Styles tab',
+            ],
+          },
+          {
+            id: 'q10',
+            text: 'What is a primary advantage of using the Section Block versus a Box element?',
+            type: 'single',
+            options: [
+              'The Section Block can contain more elements',
+              'The Section Block simplifies common use cases like setting max-width content areas',
+              'The Section Block loads faster',
+              'The Section Block offers more styling options',
+            ],
+            correctAnswers: [
+              'The Section Block simplifies common use cases like setting max-width content areas',
+            ],
+          },
+          {
+            id: 'q11',
+            text: 'How can you turn any Builder block into a clickable navigation element?',
+            type: 'single',
+            options: [
+              'Add the Navigation property in the Advanced tab',
+              'Wrap it in a Button block',
+              'Add a relative or full URL path in the link URL field in the options menu',
+              'Use the "Make clickable" toggle switch',
+            ],
+            correctAnswers: [
+              'Add a relative or full URL path in the link URL field in the options menu',
+            ],
+          },
+          {
+            id: 'q12',
+            text: 'In the demo, what layout structure was used to create the hero banner?',
+            type: 'single',
+            options: [
+              'A Box containing an Image and Text side by side',
+              'A Section block with a Columns component for a 50-50 split',
+              'A full-width Image with Text overlay',
+              'A three-column layout with centered content',
+            ],
+            correctAnswers: ['A Section block with a Columns component for a 50-50 split'],
+          },
+          {
+            id: 'q13',
+            text: 'Which feature of the Section Block is mentioned as additional functionality compared to a Box?',
+            type: 'single',
+            options: [
+              'The ability to set background images',
+              'The option to lazy load nested content',
+              'Built-in animation effects',
+              'Automatic responsive behavior',
+            ],
+            correctAnswers: ['The option to lazy load nested content'],
+          },
+          {
+            id: 'q14',
+            text: 'What are the two ways Builder provides to add video into your content?',
+            type: 'single',
+            options: [
+              'Video Block and Image Block',
+              'Video Component and Embed Block',
+              'YouTube integration and Vimeo integration',
+              'Video URL and Video Upload',
+            ],
+            correctAnswers: ['Video Component and Embed Block'],
+          },
+          {
+            id: 'q15',
+            text: 'Which feature is recommended to enable when adding videos that appear below the fold?',
+            type: 'single',
+            options: ['Autoplay', 'Mute', 'Lazy-load', 'Loop'],
+            correctAnswers: ['Lazy-load'],
+          },
+          {
+            id: 'q16',
+            text: 'When would it be more appropriate to use the Embed Block rather than the Video Block?',
+            type: 'single',
+            options: [
+              'For all videos to ensure better performance',
+              'When your videos are hosted on platforms like YouTube or Vimeo',
+              'Only for short animated clips',
+              'When you need to control the exact dimensions',
+            ],
+            correctAnswers: ['When your videos are hosted on platforms like YouTube or Vimeo'],
+          },
+          {
+            id: 'q17',
+            text: 'What advantage does uploading videos directly to Builder offer compared to embedding?',
+            type: 'single',
+            options: [
+              'Better performance and full customization',
+              'Unlimited storage',
+              'Higher video quality',
+              'Automatic SEO optimization',
+            ],
+            correctAnswers: ['Better performance and full customization'],
+          },
+          {
+            id: 'q18',
+            text: 'What purpose does the Custom Code block serve?',
+            type: 'single',
+            options: [
+              'To write CSS styles only',
+              'To create custom JavaScript animations',
+              'To integrate existing HTML or JavaScript libraries',
+              'To optimize page loading speed',
+            ],
+            correctAnswers: ['To integrate existing HTML or JavaScript libraries'],
+          },
+          {
+            id: 'q19',
+            text: 'According to the video, when is it recommended to upload videos directly to Builder?',
+            type: 'single',
+            options: [
+              'For all video content regardless of length',
+              'For shorter videos or animated backgrounds',
+              'Only when embedding is not possible',
+              'For high-definition videos only',
+            ],
+            correctAnswers: ['For shorter videos or animated backgrounds'],
+          },
+          {
+            id: 'q20',
+            text: 'What is the primary purpose of the Symbol component in Builder?',
+            type: 'single',
+            options: [
+              'To create reusable design elements',
+              'To insert another visual content entry within the current page',
+              'To add custom code components',
+              'To create animation sequences',
+            ],
+            correctAnswers: ['To insert another visual content entry within the current page'],
+          },
+          {
+            id: 'q21',
+            text: 'Which types of content can the Symbol component reference?',
+            type: 'single',
+            options: [
+              'Only symbol content models',
+              'Only page content models',
+              'Any visual content model',
+              'Only section content models',
+            ],
+            correctAnswers: ['Any visual content model'],
+          },
+          {
+            id: 'q22',
+            text: 'How can the Symbol component handle dynamic content?',
+            type: 'single',
+            options: [
+              'By using API calls to fetch content',
+              'By passing targeting values from the current content entry',
+              'Through manually refreshing the component',
+              'Only with developer assistance',
+            ],
+            correctAnswers: ['By passing targeting values from the current content entry'],
+          },
+          {
+            id: 'q23',
+            text: 'What is a practical use case for the Symbol component mentioned in the video?',
+            type: 'single',
+            options: [
+              'Creating navigation menus',
+              'Inserting a hero banner section model with scheduled updates',
+              'Building complex animations',
+              'Adding video content',
+            ],
+            correctAnswers: ['Inserting a hero banner section model with scheduled updates'],
+          },
+          {
+            id: 'q24',
+            text: 'What is the primary purpose of the Slot component in Builder?',
+            type: 'single',
+            options: [
+              'To create empty spaces in layouts',
+              'For making symbols with children that can accept children block inputs',
+              'To reserve space for future content',
+              'To create drop zones for drag and drop',
+            ],
+            correctAnswers: [
+              'For making symbols with children that can accept children block inputs',
+            ],
+          },
+          {
+            id: 'q25',
+            text: 'For interactive components like accordions or carousels, what does the presenter recommend?',
+            type: 'single',
+            options: [
+              'Using the Slot component',
+              'Using custom components built to specific needs',
+              'Using the Symbol component',
+              "Using only Builder's built-in components",
+            ],
+            correctAnswers: ['Using custom components built to specific needs'],
+          },
+          {
+            id: 'q26',
+            text: 'What additional package does Builder provide that includes components like accordions or carousels?',
+            type: 'single',
+            options: [
+              'Advanced Components package',
+              'Interactive Elements package',
+              'Widgets package',
+              'Premium Components package',
+            ],
+            correctAnswers: ['Widgets package'],
+          },
+          {
+            id: 'q27',
+            text: "According to the video, what is the relationship between Builder's built-in components and custom components?",
+            type: 'single',
+            options: [
+              'Built-in components are more powerful than custom components',
+              'Built-in components are the foundation, while custom components allow for brand alignment',
+              'Custom components can only be used alongside built-in components',
+              'Built-in components will eventually replace custom components',
+            ],
+            correctAnswers: [
+              'Built-in components are the foundation, while custom components allow for brand alignment',
+            ],
+          },
+        ],
+      },
+    ],
+    tags: ['Editor', 'Designer'],
+  },
+  {
+    id: 'builder-101-chrome-extension',
+    title: 'Builder 101: Chrome Extension',
+    description: 'Learn how to use the Builder.io Chrome extension for visual editing',
+    level: 'Builder 101',
+    duration: '15 minutes',
+    instructor: {
+      name: 'Madison Dickson',
+    },
+    modules: [
+      {
+        id: 'chrome-extension-intro',
+        title: 'Using the Chrome Extension',
+        description: "Learn how to use Builder.io's Chrome extension for visual editing",
+        videoUrl: 'https://youtu.be/dmPD44qgf0M',
+        docsUrl: 'https://www.builder.io/c/docs/chrome-extension#the-builder-chrome-extension',
+        order: 1,
+        questions: [
+          {
+            id: 'q1',
+            text: 'What is the primary purpose of the Builder Chrome extension?',
+            type: 'single',
+            options: [
+              'To debug Builder content issues',
+              'To allow content creators to identify and edit Builder-managed content directly from a live website',
+              'To monitor website performance',
+              'To create new Builder content',
+            ],
+            correctAnswers: [
+              'To allow content creators to identify and edit Builder-managed content directly from a live website',
+            ],
+          },
+          {
+            id: 'q2',
+            text: 'Besides Chrome, which browsers are compatible with the Builder extension?',
+            type: 'multiple',
+            options: ['Brave', 'Microsoft Edge', 'Opera', 'Safari', 'Firefox'],
+            correctAnswers: ['Brave', 'Microsoft Edge'],
+          },
+          {
+            id: 'q3',
+            text: 'What happens when you click the Builder icon in your browser after installing the extension?',
+            type: 'single',
+            options: [
+              'It logs you into your Builder account',
+              "It opens Builder's dashboard",
+              'It outlines Builder-driven components and symbols on the page',
+              'It shows analytics for the current page',
+            ],
+            correctAnswers: ['It outlines Builder-driven components and symbols on the page'],
+          },
+          {
+            id: 'q4',
+            text: 'What happens when you click the edit button that appears when hovering over outlined content?',
+            type: 'single',
+            options: [
+              'It allows you to edit content directly on the website',
+              'It copies the content to your clipboard',
+              "It opens the corresponding content in Builder's visual editor",
+              'It shows the version history of the content',
+            ],
+            correctAnswers: ["It opens the corresponding content in Builder's visual editor"],
+          },
+          {
+            id: 'q5',
+            text: 'Who can use the Chrome extension to edit content on a website?',
+            type: 'single',
+            options: [
+              'Anyone who has the extension installed',
+              'Only the website owner',
+              'Users who have a Builder account and access to the content',
+              'Only developers with admin privileges',
+            ],
+            correctAnswers: ['Users who have a Builder account and access to the content'],
+          },
+          {
+            id: 'q6',
+            text: 'What is the purpose of the "copy layouts" feature?',
+            type: 'single',
+            options: [
+              'To duplicate existing Builder content between pages',
+              'To add content from a legacy site into Builder',
+              'To clone an entire website structure',
+              'To save layouts for future use',
+            ],
+            correctAnswers: ['To add content from a legacy site into Builder'],
+          },
+          {
+            id: 'q7',
+            text: 'What is the current development status of the "copy layouts" feature?',
+            type: 'single',
+            options: [
+              'Fully released',
+              'Still in beta',
+              'Deprecated',
+              'Available for enterprise plans only',
+            ],
+            correctAnswers: ['Still in beta'],
+          },
+          {
+            id: 'q8',
+            text: 'How do you select an area to copy with the "copy layouts" feature?',
+            type: 'single',
+            options: [
+              'Right-click and select "Copy to Builder"',
+              'Use keyboard shortcut Ctrl+B',
+              'Click the copy layout button and then click on the area to copy',
+              'Drag a selection box around the content',
+            ],
+            correctAnswers: ['Click the copy layout button and then click on the area to copy'],
+          },
+        ],
+      },
+    ],
+    tags: ['Editor', 'Designer', 'Contributor'],
+  },
+  {
+    id: 'builder-101-user-management',
+    title: 'Builder 101: User Management',
+    description: 'Learn how to manage users and roles in Builder.io',
+    level: 'Builder 101',
+    duration: '20 minutes',
+    tags: ['Admin'],
+    instructor: {
+      name: 'Madison Dickson',
+    },
+    modules: [
+      {
+        id: 'user-management-intro',
+        title: 'Managing Users and Roles',
+        description: 'Learn about user management and role-based access control',
+        docsUrls: [
+          'https://www.builder.io/c/docs/managing-users',
+          'https://www.builder.io/c/docs/custom-roles#define-custom-roles',
+        ],
+        order: 1,
+        questions: [
+          {
+            id: 'q1',
+            text: 'What levels of access control does Builder.io provide?',
+            type: 'multiple',
+            options: [
+              'Organization level',
+              'Space level',
+              'Model level',
+              'Component level',
+              'Entry level',
+            ],
+            correctAnswers: ['Organization level', 'Space level', 'Model level'],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'builder-101-organizations',
+    title: 'Builder 101: Organizations, Spaces, and Environments',
+    description: 'Learn how to manage organizations, spaces, and environments in Builder.io',
+    level: 'Builder 101',
+    duration: '20 minutes',
+    tags: ['Admin'],
+    instructor: {
+      name: 'Madison Dickson',
+    },
+    modules: [
+      {
+        id: 'orgs-spaces-envs-intro',
+        title: 'Understanding Organizations and Spaces',
+        description: 'Learn about the organizational structure in Builder.io',
+        videoUrl: 'https://youtu.be/Lo-RXk1NWW4',
+        order: 1,
+        questions: [
+          {
+            id: 'q1',
+            text: "What's an organization in Builder.io?",
+            type: 'single',
+            options: [
+              'A team of developers',
+              'The top-level entity that contains spaces and users',
+              'A collection of content models',
+              'A specific project or client',
+            ],
+            correctAnswers: ['The top-level entity that contains spaces and users'],
+          },
+          {
+            id: 'q2',
+            text: "What's a space in Builder.io?",
+            type: 'single',
+            options: [
+              'A visual area on a page',
+              'A container for specific projects, with its own content, models, and settings',
+              'A virtual environment for testing',
+              'A type of layout template',
+            ],
+            correctAnswers: [
+              'A container for specific projects, with its own content, models, and settings',
+            ],
+          },
+          {
+            id: 'q3',
+            text: "What's an environment in Builder.io?",
+            type: 'single',
+            options: [
+              'A development stage (like dev, staging, production)',
+              'A type of content model',
+              'A visual theme setting',
+              'A cloud server instance',
+            ],
+            correctAnswers: ['A development stage (like dev, staging, production)'],
+          },
+          {
+            id: 'q4',
+            text: 'If a user is part of an organization, does it mean they are part of every space in that organization?',
+            type: 'single',
+            options: [
+              'Yes, organization users automatically have access to all spaces',
+              'No, space access must be granted separately even for organization users',
+              'It depends on their organization role',
+              'Only for admin users',
+            ],
+            correctAnswers: [
+              'No, space access must be granted separately even for organization users',
+            ],
+          },
+          {
+            id: 'q5',
+            text: 'What is the default number of environments in a space?',
+            type: 'single',
+            options: ['None', 'One', 'Three', 'Unlimited'],
+            correctAnswers: ['One'],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'builder-101-widgets-addon',
+    title: 'Builder 101: Widgets Add-on',
+    description:
+      "Learn how to use Builder.io's Widgets package to add interactive components like accordions and carousels",
+    level: 'Builder 101',
+    duration: '20 minutes',
+    comingSoon: true,
+    instructor: {
+      name: 'Madison Dickson',
+    },
+    modules: [
+      {
+        id: 'widgets-intro',
+        title: 'Using Builder Widgets',
+        description: "Learn how to use Builder.io's widget components",
+        docsUrl: 'https://www.builder.io/c/docs/widgets#using-widgets',
+        order: 1,
+        comingSoon: true,
+      },
+    ],
+  },
+  {
+    id: 'builder-101-publishing-content',
+    title: 'Builder 101: Publishing Content',
+    description: "Learn about Builder.io's content publishing workflows and scheduling features",
+    level: 'Builder 101',
+    duration: '25 minutes',
+    comingSoon: true,
+    instructor: {
+      name: 'Madison Dickson',
+    },
+    modules: [
+      {
+        id: 'publishing-intro',
+        title: 'Publishing and Scheduling Content',
+        description: 'Learn about content publishing workflows and scheduling',
+        docsUrls: [
+          'https://www.builder.io/c/docs/request-to-publish#request-to-publish',
+          'https://www.builder.io/c/docs/scheduling#schedule-content',
+        ],
+        order: 1,
+        comingSoon: true,
+      },
+    ],
+  },
+  {
+    id: 'builder-101-templates-symbols',
+    title: 'Builder 101: Templates & Symbols',
+    description: 'Learn how to create and manage reusable templates and symbols in Builder.io',
+    level: 'Builder 101',
+    duration: '30 minutes',
+    comingSoon: true,
+    instructor: {
+      name: 'Madison Dickson',
+    },
+    modules: [
+      {
+        id: 'templates-intro',
+        title: 'Working with Templates',
+        description: 'Learn how to create and use templates across spaces',
+        docsUrls: [
+          'https://www.builder.io/c/docs/templates#templates',
+          'https://www.builder.io/c/docs/using-templates-across-spaces#use-templates-across-spaces',
+        ],
+        order: 1,
+        comingSoon: true,
+      },
+      {
+        id: 'symbols-intro',
+        title: 'Working with Symbols',
+        description: 'Learn how to create and manage symbols',
+        docsUrls: [
+          'https://www.builder.io/c/docs/symbols-intro#intro-to-symbols',
+          'https://www.builder.io/c/docs/make-a-symbol#make-a-symbol',
+          'https://www.builder.io/c/docs/opening-and-editing-symbols#open-and-edit-symbols',
+          'https://www.builder.io/c/docs/adding-inputs-to-symbols#add-inputs-to-symbols',
+          'https://www.builder.io/c/docs/scheduling-symbols#schedule-symbols',
+          'https://www.builder.io/c/docs/symbols-with-blocks#create-symbols-that-accept-blocks-as-inputs',
+          'https://www.builder.io/c/docs/global-symbols#use-symbols-across-spaces',
+          'https://www.builder.io/c/docs/dynamic-symbols#dynamic-symbols',
+        ],
+        order: 2,
+        comingSoon: true,
+      },
+    ],
+  },
+  {
+    id: 'builder-101-custom-components',
+    title: 'Builder 101: Custom Components',
+    description: 'Learn how to create and register custom components with Builder.io',
+    level: 'Builder 101',
+    duration: '30 minutes',
+    tags: ['Dev'],
+    instructor: {
+      name: 'Madison Dickson',
+    },
+    modules: [
+      {
+        id: 'custom-components-intro',
+        title: 'Understanding Custom Components',
+        description: 'Learn how to integrate your own components with Builder.io',
+        videoUrl: 'https://share.descript.com/view/wOFPaw2NGKE',
+        docsUrls: [
+          'https://www.builder.io/c/docs/custom-components-intro#integrate-custom-components',
+          'https://www.builder.io/c/docs/custom-components-setup',
+          'https://www.builder.io/c/docs/register-components-options#register-component-options',
+          'https://www.builder.io/c/docs/custom-components-visual-editor#custom-components-in-the-visual-editor',
+          'https://www.builder.io/c/docs/custom-components-children#child-blocks-in-custom-components',
+          'https://www.builder.io/c/docs/custom-components-overriding#override-built-in-components',
+          'https://www.builder.io/c/docs/component-api-reference#built-in-component-api-reference',
+        ],
+        order: 1,
+        questions: [
+          {
+            id: 'q1',
+            text: 'What are Custom Components in Builder.io?',
+            type: 'single',
+            options: [
+              'Pre-built components provided by Builder.io',
+              'Components from your codebase registered with Builder for use in the Visual Editor',
+              'Third-party plugins that can be installed from a marketplace',
+              "Components that are stored in Builder.io's database",
+            ],
+            correctAnswers: [
+              'Components from your codebase registered with Builder for use in the Visual Editor',
+            ],
+          },
+          {
+            id: 'q2',
+            text: 'Where do registered Custom Components reside?',
+            type: 'single',
+            options: [
+              "In Builder.io's component library",
+              'Only in your codebase',
+              'In a shared cloud repository',
+              "In both your codebase and Builder.io's storage",
+            ],
+            correctAnswers: ['Only in your codebase'],
+          },
+          {
+            id: 'q3',
+            text: 'What information must be included when registering a component with Builder?',
+            type: 'multiple',
+            options: [
+              'The component itself',
+              'An options object',
+              'A component name',
+              'A Builder.io API key',
+            ],
+            correctAnswers: ['The component itself', 'An options object', 'A component name'],
+          },
+          {
+            id: 'q4',
+            text: 'What happens if you don\'t provide an "image" when registering a component?',
+            type: 'single',
+            options: [
+              "The component won't be visible in the editor",
+              "You'll get a React-like Atom icon for your component",
+              'Builder will generate a default image based on the component name',
+              'An error will be thrown during registration',
+            ],
+            correctAnswers: ["You'll get a React-like Atom icon for your component"],
+          },
+          {
+            id: 'q5',
+            text: "Why is it recommended to wrap your components with 'dynamic' in Next.js?",
+            type: 'single',
+            options: [
+              'To enable server-side rendering',
+              'To create responsive components',
+              'To allow Next.js to code-split and only fetch components when used',
+              "To make components compatible with Builder.io's editor",
+            ],
+            correctAnswers: ['To allow Next.js to code-split and only fetch components when used'],
+          },
+          {
+            id: 'q6',
+            text: 'How does Builder.io handle input mapping for Custom Components?',
+            type: 'single',
+            options: [
+              'Inputs must be manually mapped in a separate configuration file',
+              "Builder's SDK automatically maps all inputs to the props of your component",
+              'Input mapping requires a dedicated API endpoint',
+              'Inputs are mapped using a Builder.io plugin',
+            ],
+            correctAnswers: [
+              "Builder's SDK automatically maps all inputs to the props of your component",
+            ],
+          },
+          {
+            id: 'q7',
+            text: 'To create a text input for a Custom Component, what type should be specified in the inputs array?',
+            type: 'single',
+            options: ['text', 'string', 'textfield', 'input'],
+            correctAnswers: ['string'],
+          },
+          {
+            id: 'q8',
+            text: 'What keyboard shortcut can be used to view the JSON representation of your content in the Builder editor?',
+            type: 'single',
+            options: [
+              'Ctrl/Command + J',
+              'Ctrl/Command + E',
+              'Ctrl/Command + S',
+              'Ctrl/Command + V',
+            ],
+            correctAnswers: ['Ctrl/Command + J'],
+          },
+          {
+            id: 'q9',
+            text: 'What happens to the interactivity of components when used in Builder?',
+            type: 'single',
+            options: [
+              'Components lose all interactivity in the Builder editor',
+              'Components maintain their full functionality including state management',
+              'Interactivity is only available in preview mode',
+              'Interactivity requires special Builder.io plugins',
+            ],
+            correctAnswers: [
+              'Components maintain their full functionality including state management',
+            ],
+          },
+          {
+            id: 'q10',
+            text: 'How can you organize many Custom Components in the Insert tab?',
+            type: 'multiple',
+            options: [
+              'By creating custom menus with sections',
+              'By registering components with category tags',
+              'By grouping components based on functionality or type',
+              'By using the built-in folder structure',
+            ],
+            correctAnswers: [
+              'By creating custom menus with sections',
+              'By registering components with category tags',
+            ],
+          },
+          {
+            id: 'q11',
+            text: "What distinguishes Builder's Visual CMS from traditional API-first headless CMS platforms?",
+            type: 'single',
+            options: [
+              'It requires less defining of data models and API mappings',
+              'It offers more built-in components',
+              'It provides better performance',
+              'It has a more user-friendly interface',
+            ],
+            correctAnswers: ['It requires less defining of data models and API mappings'],
+          },
+          {
+            id: 'q12',
+            text: 'What is "Component-only Mode" in Builder?',
+            type: 'single',
+            options: [
+              "A mode where only Builder's built-in components are available",
+              'A mode making only your custom components available and hiding the styles tab',
+              'A development environment for testing components',
+              'A restricted mode for non-developer users',
+            ],
+            correctAnswers: [
+              'A mode making only your custom components available and hiding the styles tab',
+            ],
+          },
+          {
+            id: 'q13',
+            text: 'When custom components are registered, where do they appear in the Builder editor?',
+            type: 'single',
+            options: [
+              'In the Components tab',
+              'In the Custom Components section of the Insert tab',
+              'In the Blocks section',
+              'In a floating toolbar',
+            ],
+            correctAnswers: ['In the Custom Components section of the Insert tab'],
+          },
+          {
+            id: 'q14',
+            text: "What is a key benefit of using Builder's Custom Component system?",
+            type: 'multiple',
+            options: [
+              'Keeping your codebase clean and maintainable',
+              'Allowing non-technical team members to use your components',
+              'Creating components with complex business logic',
+              'Integrating with third-party libraries and APIs',
+            ],
+            correctAnswers: [
+              'Keeping your codebase clean and maintainable',
+              'Allowing non-technical team members to use your components',
+            ],
+          },
+          {
+            id: 'q15',
+            text: 'How can you debug component registration in Builder?',
+            type: 'single',
+            options: [
+              'By checking the browser console for errors',
+              'By clicking the element dropdown and choosing "schema"',
+              "By using Builder's dedicated debugging tools",
+              'By examining the network requests',
+            ],
+            correctAnswers: ['By clicking the element dropdown and choosing "schema"'],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'builder-101-asset-library',
+    title: 'Builder 101: Working with the Asset Library',
+    description: 'Learn how to effectively manage and organize your media assets in Builder.io',
+    level: 'Builder 101',
+    duration: '15 minutes',
+    comingSoon: true,
+    instructor: {
+      name: 'Madison Dickson',
+    },
+    modules: [
+      {
+        id: 'asset-library-intro',
+        title: 'Asset Library Management',
+        description: 'Learn how to organize and manage your media assets effectively',
+        docsUrls: [
+          'https://www.builder.io/c/docs/asset-library#organize-with-the-asset-library',
+          'https://www.builder.io/c/docs/batch-upload#batch-upload-images',
+        ],
+        order: 1,
+        comingSoon: true,
+      },
+    ],
+  },
+  {
+    id: 'how-builder-works-technical',
+    title: 'How Builder Works: Technical Deep Dive',
+    description: 'Understand the technical architecture and inner workings of Builder.io',
+    level: 'Intermediate',
+    duration: '20 minutes',
+    tags: ['Dev'],
+    instructor: {
+      name: 'Steve Sewell',
+    },
+    modules: [
+      {
+        id: 'builder-architecture',
+        title: 'Builder Architecture Overview',
+        description:
+          "Deep dive into Builder's technical architecture and how it works under the hood",
+        videoUrl:
+          'https://cdn.builder.io/o/assets%2FYJIGb4i01jvw0SRdL5Bt%2F9b3129e956ee49fa8cbb3f79d9aa0064%2Fcompressed?apiKey=YJIGb4i01jvw0SRdL5Bt&token=9b3129e956ee49fa8cbb3f79d9aa0064&alt=media&optimized=true',
+        docsUrl: 'https://www.builder.io/c/docs/how-builder-works-technical',
+        order: 1,
+        questions: [
+          {
+            id: 'q1',
+            text: "What is the main purpose of Builder's content API?",
+            type: 'single',
+            correctAnswers: ['To deliver content and targeting rules to your application'],
+            options: [
+              'To deliver content and targeting rules to your application',
+              'To manage user authentication',
+              'To handle database operations',
+              'To process payments',
+            ],
+          },
+          {
+            id: 'q2',
+            text: 'How does Builder handle content targeting?',
+            type: 'single',
+            correctAnswers: ['By evaluating targeting rules on the server and client side'],
+            options: [
+              'Only on the client side',
+              'Only on the server side',
+              'By evaluating targeting rules on the server and client side',
+              'Through a separate targeting service',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'dev-quickstart-deep-dive',
+    title: 'Dev Quickstart: Deep Dive',
+    description: 'Learn how to set up and integrate Builder.io with Next.js and React',
+    level: 'Intermediate',
+    duration: '25 minutes',
+    tags: ['Dev'],
+    instructor: {
+      name: 'Madison Dickson',
+    },
+    modules: [
+      {
+        id: 'getting-started',
+        title: 'Getting Started with Builder.io',
+        description: 'Learn how to initialize and configure Builder.io in a Next.js project',
+        videoUrl: 'https://share.descript.com/view/0rc35jx5oMx',
+        order: 1,
+        questions: [
+          {
+            id: 'q1',
+            text: 'What technologies does Madison use for the demonstration in this video?',
+            type: 'single',
+            options: [
+              'Vue.js and Nuxt',
+              'Angular and Express',
+              'Next.js and React',
+              'Gatsby and React',
+            ],
+            correctAnswers: ['Next.js and React'],
+          },
+          {
+            id: 'q2',
+            text: 'When initializing the Next.js project with create-next-app, what must be selected regarding Turbopack?',
+            type: 'single',
+            options: [
+              'Yes to Turbopack',
+              'No to Turbopack',
+              'Either option works fine',
+              'Use the experimental version of Turbopack',
+            ],
+            correctAnswers: ['No to Turbopack'],
+          },
+          {
+            id: 'q3',
+            text: 'What command is used to initialize Builder with the dev tool?',
+            type: 'single',
+            options: [
+              'npx create-builder-app',
+              'npm init builder',
+              'npm init builder.io@latest',
+              'npm install @builder.io/react',
+            ],
+            correctAnswers: ['npm init builder.io@latest'],
+          },
+          {
+            id: 'q4',
+            text: 'Which SDK version does Madison recommend for Next.js projects at the time of recording?',
+            type: 'single',
+            options: ['Gen 1', 'Gen 2', 'Legacy version', 'Alpha version'],
+            correctAnswers: ['Gen 2'],
+          },
+          {
+            id: 'q5',
+            text: 'What does the Builder initialization process add to your project?',
+            type: 'multiple',
+            options: [
+              'Builder dev tools to the Next config',
+              'Dependencies to the package.json',
+              'A separate Builder database',
+              'A custom webpack configuration',
+            ],
+            correctAnswers: [
+              'Builder dev tools to the Next config',
+              'Dependencies to the package.json',
+            ],
+          },
+          {
+            id: 'q6',
+            text: 'What file is created to store the Builder API key during setup?',
+            type: 'single',
+            options: ['builder.config.js', '.env', 'builder-api.json', 'config.ts'],
+            correctAnswers: ['.env'],
+          },
+          {
+            id: 'q7',
+            text: 'How do you configure the Page model to point to your local dev server?',
+            type: 'single',
+            options: [
+              'By editing the .env file',
+              'By going to model settings and adding the localhost URL',
+              'By running a special CLI command',
+              'By configuring the webpack settings',
+            ],
+            correctAnswers: ['By going to model settings and adding the localhost URL'],
+          },
+          {
+            id: 'q8',
+            text: 'What happens when you hover over Builder blocks with the dev tools running?',
+            type: 'single',
+            options: [
+              'They become editable',
+              'They are highlighted',
+              'They show their component name',
+              'They display their JSON configuration',
+            ],
+            correctAnswers: ['They show their component name'],
+          },
+          {
+            id: 'q9',
+            text: 'If you need to temporarily change the preview URL, what keyboard shortcut can you use to bring up the command palette?',
+            type: 'single',
+            options: [
+              'Ctrl/Command + P',
+              'Ctrl/Command + K',
+              'Ctrl/Command + E',
+              'Ctrl/Command + B',
+            ],
+            correctAnswers: ['Ctrl/Command + K'],
+          },
+          {
+            id: 'q10',
+            text: 'What must you specify when creating a new Page model in Builder?',
+            type: 'single',
+            options: ['A unique identifier', 'A URL path', 'A component name', 'A content schema'],
+            correctAnswers: ['A URL path'],
+          },
+          {
+            id: 'q11',
+            text: 'What is the purpose of the preview button when working with Builder content?',
+            type: 'single',
+            options: [
+              'To publish content to a staging environment',
+              'To get a unique link to the current draft without publishing',
+              'To view the content in mobile view',
+              'To check for errors before publishing',
+            ],
+            correctAnswers: ['To get a unique link to the current draft without publishing'],
+          },
+          {
+            id: 'q12',
+            text: 'What files does the Builder setup process add to your project?',
+            type: 'multiple',
+            options: [
+              'builder-registry.ts',
+              'A catch-all app route file',
+              ".env file with your space's API key",
+              'A custom theme configuration',
+            ],
+            correctAnswers: [
+              'builder-registry.ts',
+              'A catch-all app route file',
+              ".env file with your space's API key",
+            ],
+          },
+          {
+            id: 'q13',
+            text: 'What is the purpose of the builder-registry.ts file?',
+            type: 'single',
+            options: [
+              'To store your Builder API credentials',
+              'To register your custom components with Builder',
+              'To define your content models',
+              'To configure preview settings',
+            ],
+            correctAnswers: ['To register your custom components with Builder'],
+          },
+          {
+            id: 'q14',
+            text: 'What does the RenderBuilderContent component do?',
+            type: 'multiple',
+            options: [
+              'Checks if content is from the API',
+              "Checks if you're previewing in the visual editor",
+              'Renders content using BuilderComponent',
+              'Shows a 404 if no content is available',
+            ],
+            correctAnswers: [
+              'Checks if content is from the API',
+              "Checks if you're previewing in the visual editor",
+              'Renders content using BuilderComponent',
+              'Shows a 404 if no content is available',
+            ],
+          },
+          {
+            id: 'q15',
+            text: 'Where does Madison recommend posting if you run into problems with your Builder setup?',
+            type: 'single',
+            options: [
+              'Stack Overflow',
+              'GitHub Issues',
+              'The Builder forum at forum.builder.io',
+              'Twitter',
+            ],
+            correctAnswers: ['The Builder forum at forum.builder.io'],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'design-tokens-technical',
+    title: 'Design Tokens: Technical Deep Dive',
+    description:
+      'Learn how to configure and use design tokens to enforce design system constraints in Builder.io',
+    level: 'Intermediate',
+    tags: ['Dev', 'Designer'],
+    duration: '20 minutes',
+    instructor: {
+      name: 'Steve Sewell',
+    },
+    modules: [
+      {
+        id: 'design-tokens-intro',
+        title: 'Understanding Design Tokens',
+        description: 'Learn how to configure and use design tokens in Builder.io',
+        videoUrl: 'https://www.loom.com/embed/263312a22d0d4ffbbf5fb5c5212c9275',
+        docsUrl: 'https://www.builder.io/c/docs/design-tokens',
+        order: 1,
+        questions: [
+          {
+            id: 'q1',
+            text: 'What are the two base token groups mentioned in the video?',
+            type: 'multiple',
+            options: ['Colors', 'Spacing', 'Typography', 'Animations'],
+            correctAnswers: ['Colors', 'Spacing'],
+          },
+          {
+            id: 'q2',
+            text: "What happens when you enable 'style strict mode'?",
+            type: 'single',
+            options: [
+              'You can only use predefined tokens, no freeform values',
+              'All styling options are disabled',
+              'Only developers can edit styles',
+              'Styles are automatically optimized',
+            ],
+            correctAnswers: ['You can only use predefined tokens, no freeform values'],
+          },
+          {
+            id: 'q3',
+            text: 'What types of values can be used for color tokens?',
+            type: 'multiple',
+            options: ['Hex codes', 'CSS variables', 'Named colors', 'RGB values'],
+            correctAnswers: ['Hex codes', 'CSS variables', 'Named colors'],
+          },
+          {
+            id: 'q4',
+            text: 'How can you hide a specific property from being editable?',
+            type: 'single',
+            options: [
+              'Set the property to null',
+              'Set the property to false',
+              'Remove the property from the tokens list',
+              'Add the property to a blacklist',
+            ],
+            correctAnswers: ['Set the property to false'],
+          },
+          {
+            id: 'q5',
+            text: 'What happens when you use arrow keys with spacing tokens?',
+            type: 'single',
+            options: [
+              'Nothing changes',
+              'Values increment by pixels',
+              'It toggles between defined token values in order',
+              'It switches between random values',
+            ],
+            correctAnswers: ['It toggles between defined token values in order'],
+          },
+          {
+            id: 'q6',
+            text: "What's the recommended approach for implementing design tokens according to Steve?",
+            type: 'multiple',
+            options: [
+              'Use strict mode to limit everything by default and add what you want',
+              'Start with normal mode and incrementally add tokens',
+              'Always use strict mode',
+              'Never use tokens for spacing',
+            ],
+            correctAnswers: [
+              'Use strict mode to limit everything by default and add what you want',
+              'Start with normal mode and incrementally add tokens',
+            ],
+          },
+          {
+            id: 'q7',
+            text: 'Who can register design tokens through the JavaScript console?',
+            type: 'single',
+            options: ['Any user', 'Only Builder admins', 'Only developers', 'Content editors'],
+            correctAnswers: ['Only Builder admins'],
+          },
+          {
+            id: 'q8',
+            text: 'What happens if you enable strict mode with no design tokens defined?',
+            type: 'multiple',
+            options: [
+              'You can only set alignment',
+              'You can only use show/hide options',
+              'You can set basic typography like bold',
+              'You can edit all style properties',
+            ],
+            correctAnswers: [
+              'You can only set alignment',
+              'You can only use show/hide options',
+              'You can set basic typography like bold',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'localization-technical',
+    title: 'Localization: Technical Deep Dive',
+    description: 'Learn how to implement localization strategies in Builder.io',
+    level: 'Intermediate',
+    tags: ['Dev'],
+    duration: '30 minutes',
+    instructor: {
+      name: 'Madison Dickson',
+    },
+    modules: [
+      {
+        id: 'localization-intro',
+        title: 'Understanding Localization',
+        description: 'Learn about different localization strategies and their implementation',
+        videoUrl:
+          'https://www.loom.com/share/6545a074a5e847bca2b5bc12ca9b1719?sid=be9375f8-e9ac-4b19-bf0e-5b295f1f3f7f',
+        docsUrls: [
+          'https://www.builder.io/c/docs/localization-intro#introduction-to-localization-with-builder',
+          'https://www.builder.io/c/docs/add-remove-locales#add-locales',
+          'https://www.builder.io/c/docs/localization-integrate#integrate-builder-localization-with-your-code',
+          'https://www.builder.io/c/docs/localization-inline#inline-localization',
+          'https://www.builder.io/c/docs/localization-whole-entry#localize-a-whole-entry',
+          'https://www.builder.io/c/docs/localize-data-models#localizing-data-models',
+          'https://www.builder.io/c/docs/grouping-locales#group-locales',
+          'https://www.builder.io/c/docs/crowdin',
+          'https://www.builder.io/c/docs/phrase',
+          'https://www.builder.io/c/docs/integrating-smartling',
+        ],
+        order: 1,
+        questions: [
+          {
+            id: 'q1',
+            text: 'What are the two main strategies for website localization with Builder?',
+            type: 'single',
+            options: [
+              'Page translation and component translation',
+              'Page level localization and block level localization',
+              'API localization and visual localization',
+              'Content model localization and visual editor localization',
+            ],
+            correctAnswers: ['Page level localization and block level localization'],
+          },
+          {
+            id: 'q2',
+            text: 'When is page level localization most appropriate?',
+            type: 'multiple',
+            options: [
+              'When you need a completely different page layout for each locale',
+              'When targeting designs to a specific region or audience',
+              'When only text content changes between locales',
+              'When the page structure remains the same across all locales',
+            ],
+            correctAnswers: [
+              'When you need a completely different page layout for each locale',
+              'When targeting designs to a specific region or audience',
+            ],
+          },
+          {
+            id: 'q3',
+            text: 'When should you use block level localization?',
+            type: 'single',
+            options: [
+              'When you need different page layouts for each locale',
+              'When you need separate content entries for each locale',
+              'When the structure is the same across locales, but images, colors, and text change',
+              'When you want to create entirely different user experiences by region',
+            ],
+            correctAnswers: [
+              'When the structure is the same across locales, but images, colors, and text change',
+            ],
+          },
+          {
+            id: 'q4',
+            text: 'Where in the Builder interface do you configure locales for your space?',
+            type: 'single',
+            options: [
+              'Under Content → Localization',
+              'Under Settings → Targeting → Localization',
+              'Under Models → Global Settings',
+              'Under Account → Language Settings',
+            ],
+            correctAnswers: ['Under Settings → Targeting → Localization'],
+          },
+          {
+            id: 'q5',
+            text: 'What is the purpose of locale grouping in Builder?',
+            type: 'single',
+            options: [
+              'To organize locales visually in the Builder interface',
+              "To allow fallback to a group default when content isn't explicitly defined for a specific locale",
+              'To batch publish content to multiple locales at once',
+              'To create region-specific content models',
+            ],
+            correctAnswers: [
+              "To allow fallback to a group default when content isn't explicitly defined for a specific locale",
+            ],
+          },
+          {
+            id: 'q6',
+            text: 'How do you target a page to a specific locale when using content entry level localization?',
+            type: 'single',
+            options: [
+              'By editing the page URL to include the locale',
+              'By going to the targeting area, selecting locale, and adding the desired locale',
+              'By creating a separate model for each locale',
+              'By adding a locale prefix to the page name',
+            ],
+            correctAnswers: [
+              'By going to the targeting area, selecting locale, and adding the desired locale',
+            ],
+          },
+          {
+            id: 'q7',
+            text: 'Which of the following are examples of when to use page level localization?',
+            type: 'multiple',
+            options: [
+              'Region-specific holidays',
+              'Region-specific campaigns',
+              'Independent content workflows for different regions',
+              'Text translation within the same page structure',
+            ],
+            correctAnswers: [
+              'Region-specific holidays',
+              'Region-specific campaigns',
+              'Independent content workflows for different regions',
+            ],
+          },
+          {
+            id: 'q8',
+            text: 'How do you localize a specific field when using block level localization?',
+            type: 'single',
+            options: [
+              'Create a duplicate block for each locale',
+              'Click "localize this field" and select locales from the dropdown',
+              'Add a locale prefix to the field name',
+              'Create a separate component for each locale',
+            ],
+            correctAnswers: ['Click "localize this field" and select locales from the dropdown'],
+          },
+          {
+            id: 'q9',
+            text: "What happens if a specific locale doesn't have localized content for a field?",
+            type: 'single',
+            options: [
+              'The content appears blank',
+              'An error is displayed',
+              'It falls back to the default value',
+              'It displays a placeholder indicating missing content',
+            ],
+            correctAnswers: ['It falls back to the default value'],
+          },
+          {
+            id: 'q10',
+            text: 'Which third-party localization services does Builder integrate with?',
+            type: 'multiple',
+            options: ['Phrase', 'Smartling', 'Crowdin', 'Lokalise'],
+            correctAnswers: ['Phrase', 'Smartling', 'Crowdin'],
+          },
+          {
+            id: 'q11',
+            text: 'When implementing content level localization, where should the locale be passed in the code?',
+            type: 'single',
+            options: [
+              'As a separate parameter in the render function',
+              'Through the user attributes key in the builder.get function options',
+              'As a global variable in the application',
+              'In the page URL parameter',
+            ],
+            correctAnswers: ['Through the user attributes key in the builder.get function options'],
+          },
+          {
+            id: 'q12',
+            text: 'For in-page localization, where must the locale be passed in the code?',
+            type: 'multiple',
+            options: [
+              'At the same level as user attributes in builder.get',
+              'As a prop into the builder content component',
+              'In the page route configuration',
+              'As a meta tag in the HTML',
+            ],
+            correctAnswers: [
+              'At the same level as user attributes in builder.get',
+              'As a prop into the builder content component',
+            ],
+          },
+          {
+            id: 'q13',
+            text: "What can happen if you don't pass a locale value when using block level localization?",
+            type: 'single',
+            options: [
+              'The content will not render at all',
+              'Inputs might render as "[object Object]"',
+              'The site will default to English',
+              'Builder will throw a console error',
+            ],
+            correctAnswers: ['Inputs might render as "[object Object]"'],
+          },
+          {
+            id: 'q14',
+            text: 'How can you enforce complete localization of content before publishing?',
+            type: 'single',
+            options: [
+              'By using validation hooks',
+              'By enabling the "require localization" setting',
+              'By adding a pre-publish checklist',
+              'By using the built-in localization status report',
+            ],
+            correctAnswers: ['By enabling the "require localization" setting'],
+          },
+          {
+            id: 'q15',
+            text: 'What is a benefit of using third-party localization plugins with Builder?',
+            type: 'single',
+            options: [
+              'They automatically translate content without human review',
+              'They provide one-click options to send content to translation platforms',
+              'They enable real-time translation during content editing',
+              "They add new locales that aren't available in Builder",
+            ],
+            correctAnswers: [
+              'They provide one-click options to send content to translation platforms',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'workflows-technical',
+    title: 'Workflows & Content Governance',
+    description: 'Learn how to implement content governance and workflow strategies in Builder.io',
+    level: 'Intermediate',
+    tags: ['Dev'],
+    duration: '25 minutes',
+    instructor: {
+      name: 'Madison Dickson',
+    },
+    modules: [
+      {
+        id: 'workflows-intro',
+        title: 'Understanding Workflows and Content Governance',
+        description: "Learn about Builder.io's workflow and content governance features",
+        videoUrl:
+          'https://www.loom.com/embed/16ff73afaca143ebb45e5dd8aae29b6c?sid=c358bbc3-3abd-497d-a37d-3f21685a6218',
+        docsUrls: [
+          'https://www.builder.io/c/docs/understanding-organizations#organizations-overview',
+          'https://www.builder.io/c/docs/content-governance#rules-and-workflows-for-content-governance',
+          'https://www.builder.io/c/docs/custom-roles#define-custom-roles',
+          'https://www.builder.io/c/docs/environments-permissions#managing-environment-permissions',
+        ],
+        order: 1,
+        questions: [
+          {
+            id: 'q1',
+            text: 'What type of plan is required to access content governance features in Builder.io?',
+            type: 'single',
+            options: [
+              'Professional plan',
+              'Enterprise plan',
+              'Developer plan',
+              'All plans include these features',
+            ],
+            correctAnswers: ['Enterprise plan'],
+          },
+          {
+            id: 'q2',
+            text: 'Where can you find and configure content governance settings in Builder.io?',
+            type: 'single',
+            options: [
+              'Under Account → Governance',
+              'Under Settings → Content Governance',
+              'Under Models → Workflow Rules',
+              'Under Content → Approval Process',
+            ],
+            correctAnswers: ['Under Settings → Content Governance'],
+          },
+          {
+            id: 'q3',
+            text: 'How can workflows be applied to content models?',
+            type: 'multiple',
+            options: [
+              'Applied to all content models',
+              'Applied to specific models',
+              'Applied to specific content within models',
+              'Applied to specific user roles',
+            ],
+            correctAnswers: ['Applied to all content models', 'Applied to specific models'],
+          },
+          {
+            id: 'q4',
+            text: 'What appears instead of a publish button when workflows are enabled for content?',
+            type: 'single',
+            options: [
+              'An approval request button',
+              'A workflow status indicator',
+              'A next stage picker',
+              'A submit for review button',
+            ],
+            correctAnswers: ['A next stage picker'],
+          },
+          {
+            id: 'q5',
+            text: 'Who can be given permission to transition content to specific workflow stages?',
+            type: 'multiple',
+            options: [
+              'Predefined roles',
+              'Custom roles',
+              'Specific users',
+              'Anyone with editor access',
+            ],
+            correctAnswers: ['Predefined roles', 'Custom roles'],
+          },
+          {
+            id: 'q6',
+            text: 'What happens when a user without permissions tries to move content to the next workflow stage?',
+            type: 'single',
+            options: [
+              'The action is blocked with an error message',
+              "They're prompted to send a request message to authorized team members",
+              'The system automatically notifies an admin user',
+              'The content is locked until an admin reviews it',
+            ],
+            correctAnswers: ['The action is blocked with an error message'],
+          },
+          {
+            id: 'q7',
+            text: 'What is the difference between the "status" and "stage" columns in content lists?',
+            type: 'single',
+            options: [
+              'Status shows workflow position; stage shows publication state',
+              'Status shows if content is published or draft; stage shows the workflow stage',
+              'Status is for regular plans; stage is only for enterprise plans',
+              'They are interchangeable terms in Builder.io',
+            ],
+            correctAnswers: [
+              'Status shows if content is published or draft; stage shows the workflow stage',
+            ],
+          },
+          {
+            id: 'q8',
+            text: 'What advanced feature allows automatic notifications when content moves between workflow stages?',
+            type: 'single',
+            options: ['Email notifications', 'Slack integrations', 'Web hooks', 'Status reports'],
+            correctAnswers: ['Web hooks'],
+          },
+          {
+            id: 'q9',
+            text: "How are environments organized within Builder.io's structure?",
+            type: 'single',
+            options: [
+              'Organizations → Spaces → Environments',
+              'Spaces → Organizations → Environments',
+              'Environments → Spaces → Organizations',
+              'Organizations → Environments → Spaces',
+            ],
+            correctAnswers: ['Organizations → Spaces → Environments'],
+          },
+          {
+            id: 'q10',
+            text: 'What indicates that content in a lower environment will reflect changes made in the main environment?',
+            type: 'single',
+            options: [
+              'The content is marked as "synced"',
+              'The content has a "linked" status',
+              'The content shows a "mirror" icon',
+              'The content appears with a blue background',
+            ],
+            correctAnswers: ['The content shows a "mirror" icon'],
+          },
+          {
+            id: 'q11',
+            text: 'What happens when you "push" content from a lower environment to the main environment where governance is enabled?',
+            type: 'single',
+            options: [
+              'Content is automatically published in the main environment',
+              'Content bypasses workflow stages in the main environment',
+              'Content cannot skip the governance workflows in the main environment',
+              'Content is placed in a special review queue',
+            ],
+            correctAnswers: [
+              'Content cannot skip the governance workflows in the main environment',
+            ],
+          },
+          {
+            id: 'q12',
+            text: 'How many environments are included by default with an enterprise account?',
+            type: 'single',
+            options: ['2', '3', '5', 'Unlimited'],
+            correctAnswers: ['3'],
+          },
+          {
+            id: 'q13',
+            text: 'What is unique about each environment in a Builder.io space?',
+            type: 'multiple',
+            options: [
+              'Each has its own API key',
+              'Each can have different content models',
+              'Each can have its own workspace settings',
+              'Each can have separate asset libraries',
+            ],
+            correctAnswers: [
+              'Each has its own API key',
+              'Each can have its own workspace settings',
+            ],
+          },
+          {
+            id: 'q14',
+            text: 'How can you revert changes made to unlinked content in a lower environment?',
+            type: 'single',
+            options: [
+              'Click the "revert changes" button',
+              'Turn on "live sync" to re-sync with the main environment',
+              'Use the version history to restore a previous version',
+              'Delete the content and recreate it',
+            ],
+            correctAnswers: ['Turn on "live sync" to re-sync with the main environment'],
+          },
+          {
+            id: 'q15',
+            text: 'What feature is currently NOT available in lower environments but only in the main environment?',
+            type: 'single',
+            options: [
+              'Custom components',
+              'Content governance and workflows',
+              'Content models',
+              'Publishing capabilities',
+            ],
+            correctAnswers: ['Content governance and workflows'],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'targeting-and-scheduling',
+    title: 'Targeting & Scheduling',
+    description:
+      'Learn how to implement advanced targeting and scheduling strategies in Builder.io',
+    level: 'Intermediate',
+    tags: ['Dev'],
+    duration: '25 minutes',
+    comingSoon: true,
+    instructor: {
+      name: 'Madison Dickson',
+    },
+    modules: [
+      {
+        id: 'targeting-intro',
+        title: 'Understanding Targeting and Scheduling',
+        description: "Learn about Builder.io's targeting capabilities and scheduling features",
+        docsUrls: [
+          'https://www.builder.io/c/docs/custom-targeting-attributes#custom-targeting-attributes',
+          'https://www.builder.io/c/docs/smart-targeting#smart-targeting',
+          'https://www.builder.io/c/docs/targeting-cheatsheet#targeting-cheatsheet',
+          'https://www.builder.io/c/docs/cdp-with-builder#using-builder-with-customer-data-platforms',
+          'https://www.builder.io/c/docs/scheduling#schedule-content',
+          'https://www.builder.io/c/docs/variant-containers#variant-containers',
+        ],
+        order: 1,
+        comingSoon: true,
+      },
+    ],
+  },
+  {
+    id: 'insights-and-ab-testing',
+    title: 'Insights & A/B Testing',
+    description:
+      "Learn how to use Builder.io's analytics and A/B testing features to optimize your content",
+    level: 'Intermediate',
+    tags: ['Marketing', 'Designer'],
+    duration: '20 minutes',
+    comingSoon: true,
+    instructor: {
+      name: 'Madison Dickson',
+    },
+    modules: [
+      {
+        id: 'insights-intro',
+        title: 'Understanding Insights and A/B Testing',
+        description: "Learn how to use Builder.io's analytics and testing capabilities",
+        docsUrls: ['https://www.builder.io/c/docs/content-entry-insights#content-entry-insights'],
+        order: 1,
+        comingSoon: true,
+      },
+    ],
+  },
+  {
+    id: 'external-data-and-bindings',
+    title: 'External Data & Data Bindings',
+    description: 'Learn how to integrate and bind external data sources with Builder.io',
+    level: 'Intermediate',
+    tags: ['Dev'],
+    duration: '25 minutes',
+    comingSoon: true,
+    instructor: {
+      name: 'Madison Dickson',
+    },
+    modules: [
+      {
+        id: 'data-bindings-intro',
+        title: 'Understanding Data Bindings',
+        description: 'Learn how to work with external data and state management in Builder.io',
+        docsUrls: [
+          'https://www.builder.io/c/docs/data-binding-overview#data-binding-overview',
+          'https://www.builder.io/c/docs/data-binding-create-data#create-data',
+          'https://www.builder.io/c/docs/data-binding-connect-data#connect-data',
+          'https://www.builder.io/c/docs/data-binding-entries#bind-data',
+          'https://www.builder.io/c/docs/data-binding-use-existing-data#use-existing-data',
+          'https://www.builder.io/c/docs/data-binding-view-use-state#view-and-use-state',
+          'https://www.builder.io/c/docs/guides/state-and-actions#modify-state-with-actions',
+        ],
+        order: 1,
+        comingSoon: true,
+      },
+    ],
+  },
+];
+
+export const courseSections: CourseSection[] = [
+  {
+    title: 'Builder 101 series',
+    courses: builderPublishPlatformCourses
+      .filter(course => course.level === 'Builder 101')
+      .sort((a, b) => {
+        // Put coming soon courses at the bottom
+        if (a.comingSoon && !b.comingSoon) return 1;
+        if (!a.comingSoon && b.comingSoon) return -1;
+        return 0;
+      }),
+  },
+  {
+    title: 'Intermediate',
+    courses: builderPublishPlatformCourses
+      .filter(course => course.level === 'Intermediate')
+      .sort((a, b) => {
+        // Put coming soon courses at the bottom
+        if (a.comingSoon && !b.comingSoon) return 1;
+        if (!a.comingSoon && b.comingSoon) return -1;
+        return 0;
+      }),
+  },
+];
+
+// Add this function at the end of your file
+export function getCoursesByCategory(): Record<string, Course[]> {
+  const categories: Record<string, Course[]> = {};
+
+  builderPublishPlatformCourses.forEach(course => {
+    const category = course.level || 'Uncategorized';
+    if (!categories[category]) {
+      categories[category] = [];
+    }
+    categories[category].push(course);
+  });
+
+  return categories;
+}

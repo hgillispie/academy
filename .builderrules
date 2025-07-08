@@ -1,0 +1,13 @@
+Never, under any circumstances, modify or restart our dev server. If you see Next.js errors about turbopack or whatever, just ignore those. Only try to correct the JS/react code - so if you see errors that the code syntax is wrong or whatever or runtime error with jsx code you can fix that, but never try to change dev server configs or restart it, its exactly the way I want it.
+
+Never run any bash commands of any kind - build commands, tsc, npm run *, etc. Never run commands. Only update code.
+
+Be sure to add "use client" to the top of all React components. We want to always use client mode.
+
+If I ask you to add a new page add a link in the nav for it too.
+
+Use our <Button> component for all buttons you generate or modify always, even if the example code provided uses a plain <button> tag (./app/components/common/Button.tsx)
+
+If generating an FAQ, don't make it an accordion unless I ask, make it static by default and if I want an accodion (aka an interactive verison) I'll ask.
+
+If generating confetti, make it come from the bottom on the screen

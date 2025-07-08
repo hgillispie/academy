@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+  --primary-color: #a97ff2;
+  --accent-color: #cf0ec7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Restyle Builder Richtext input */
+
+.builder-text ul {
+  list-style-type: disc;
+}
+
+.builder-text li,
+.builder-text ol {
+  margin-top: 10px;
+}
+
+.builder-text ol {
+  list-style-type: decimal;
+}
+.builder-text ol,
+.builder-text ul {
+  display: block;
+  margin: 1em 0;
+  padding-left: 40px;
+}
+
+.builder-text a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.builder-text a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+.builder-text a:visited {
+  color: var(--accent-color);
+}
+
+.builder-text strong {
+  font-weight: bold;
+}
+.builder-text em {
+  font-style: italic;
+}
+.builder-text u {
+  text-decoration: underline;
+}
+
+.builder-text p {
+  line-height: 1.333; /* default seems to be 1.25, but it feels a little cramped */
+}
+
+/* removes the need for extra empty paragraphs, but have to go and edit all existing content too */
+.builder-text p + p {
+  @apply mt-4;
+}
+
+.question code {
+  @apply bg-gray-200 p-1 rounded-md;
+}
