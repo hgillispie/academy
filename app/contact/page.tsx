@@ -33,6 +33,56 @@ export default function ContactUsPage() {
     setSubmitted(true);
   };
 
+  const toggleFAQ = (index: number) => {
+    setOpenFAQs(prev => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
+  const faqData = [
+    {
+      question: 'How do I get started with Builder Academy?',
+      answer:
+        "Getting started is easy! Simply create an account using your email address or Google sign-in. Once registered, you'll have access to all available courses and can start learning immediately.",
+    },
+    {
+      question: 'Are the courses free?',
+      answer:
+        'Yes, all Builder Academy courses are completely free! We believe in making high-quality web development education accessible to everyone. No hidden fees or subscription costs.',
+    },
+    {
+      question: 'Do I get a certificate upon completion?',
+      answer:
+        "Yes! Upon successfully completing a course and passing all quizzes, you'll receive a digital certificate that you can share on your LinkedIn profile, resume, or portfolio.",
+    },
+    {
+      question: 'How long does it take to complete a course?',
+      answer:
+        'Course duration varies depending on the topic and your learning pace. Most courses can be completed in 2-6 hours, but you can learn at your own speed and take breaks whenever needed.',
+    },
+    {
+      question: 'Can I access courses offline?',
+      answer:
+        'Currently, courses require an internet connection to access. However, you can bookmark important resources and take notes that you can access offline.',
+    },
+    {
+      question: 'What if I need help with course content?',
+      answer:
+        "If you're stuck on course material, you can use this contact form to reach out to our support team. We typically respond within 24 hours with helpful guidance.",
+    },
+    {
+      question: 'Can I suggest new course topics?',
+      answer:
+        "Absolutely! We love hearing from our community about what topics they'd like to learn. Use the contact form above to suggest new course ideas, and we'll consider them for future releases.",
+    },
+    {
+      question: 'Is there a mobile app?',
+      answer:
+        "While we don't have a dedicated mobile app yet, our platform is fully responsive and works great on mobile browsers. You can access all courses and features from your phone or tablet.",
+    },
+  ];
+
   if (submitted) {
     return (
       <div className="min-h-screen bg-gray-50 py-12">
