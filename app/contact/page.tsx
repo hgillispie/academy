@@ -3,6 +3,79 @@
 import { useState } from 'react';
 import { Button } from '@/components/common/Button';
 
+const FAQAccordion = () => {
+  const [openItems, setOpenItems] = useState<number[]>([]);
+
+  const toggleItem = (index: number) => {
+    setOpenItems(prev =>
+      prev.includes(index) ? prev.filter(item => item !== index) : [...prev, index],
+    );
+  };
+
+  const faqData = [
+    {
+      question: 'How do I get started with Builder Academy?',
+      answer:
+        'Simply create an account and browse our available courses. Each course is designed to be beginner-friendly with step-by-step instructions and hands-on exercises.',
+    },
+    {
+      question: 'What topics are covered in the courses?',
+      answer:
+        'Our courses cover web development, visual development with Builder.io, React, Next.js, and modern frontend technologies. We regularly add new content based on industry trends.',
+    },
+    {
+      question: 'Are the courses free?',
+      answer:
+        'Yes, Builder Academy courses are completely free! Our goal is to help developers learn and grow in the Builder.io ecosystem.',
+    },
+    {
+      question: 'How long does it take to complete a course?',
+      answer:
+        'Course duration varies depending on the topic and your pace. Most courses take between 2-8 hours to complete, and you can learn at your own speed.',
+    },
+    {
+      question: 'Do I get a certificate when I complete a course?',
+      answer:
+        "Yes, you'll receive a certificate of completion for each course you finish. These certificates can be shared on your professional profiles.",
+    },
+    {
+      question: 'Can I access course materials offline?',
+      answer:
+        'Currently, courses are web-based and require an internet connection. However, you can bookmark important resources for quick reference.',
+    },
+    {
+      question: "How can I get help if I'm stuck on a lesson?",
+      answer:
+        'You can reach out through our contact form, join our Discord community for peer support, or check our help documentation for common solutions.',
+    },
+  ];
+
+  return (
+    <div className="space-y-4">
+      {faqData.map((item, index) => (
+        <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
+          <button
+            onClick={() => toggleItem(index)}
+            className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+          >
+            <h3 className="font-medium text-gray-900">{item.question}</h3>
+            <span
+              className={`transform transition-transform ${openItems.includes(index) ? 'rotate-180' : ''}`}
+            >
+              ▼
+            </span>
+          </button>
+          {openItems.includes(index) && (
+            <div className="px-6 pb-4">
+              <p className="text-gray-600 leading-relaxed">{item.answer}</p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
 export default function ContactPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
