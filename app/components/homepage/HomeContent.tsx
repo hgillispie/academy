@@ -3,6 +3,7 @@
 import { Footer } from '@/components/navigation/Footer';
 import { Button } from '../common/Button';
 import { takeSurvey } from './takeSurvey';
+import { EventsCarousel } from './EventsCarousel';
 
 export function HomeContent() {
   return (
@@ -28,6 +29,9 @@ export function HomeContent() {
             Take Survey
           </Button>
         </div>
+
+        {/* Events and Certification Carousel */}
+        <EventsCarousel />
       </main>
 
       <Footer />
