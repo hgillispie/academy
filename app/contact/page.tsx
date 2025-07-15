@@ -204,6 +204,17 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+
+      {/* FAQ Section */}
+      <div className="mt-16">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+          <p className="text-lg text-gray-600">
+            Find quick answers to common questions about Builder Academy
+          </p>
+        </div>
+        <FAQAccordion />
+      </div>
     </div>
   );
 }
