@@ -55,7 +55,7 @@ export function EventsCarousel() {
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
-          {slides.map((slide, index) => (
+          {slides.map(slide => (
             <div key={slide.id} className="w-full flex-shrink-0">
               <div
                 className="flex flex-col justify-center items-center gap-5 px-6 sm:px-12 md:px-24 py-8 rounded-lg min-h-[200px]"
