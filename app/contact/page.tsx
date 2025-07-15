@@ -115,7 +115,10 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-[#cf0ec7] to-purple-600 rounded-lg p-6 text-white">
+          <div
+            className="rounded-lg p-6 text-white"
+            style={{ backgroundColor: 'rgba(118, 45, 156, 1)' }}
+          >
             <h3 className="text-xl font-semibold mb-2">Need immediate help?</h3>
             <p className="mb-4">
               For urgent issues or technical support, visit our Help page for comprehensive guides
