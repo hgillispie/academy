@@ -44,7 +44,7 @@ const FAQAccordion = () => {
         'Currently, courses are web-based and require an internet connection. However, you can bookmark important resources for quick reference.',
     },
     {
-      question: "How can I get help if I'm stuck on a lesson?",
+      question: 'How can I get help if I&apos;m stuck on a lesson?',
       answer:
         'You can reach out through our contact form, join our Discord community for peer support, or check our help documentation for common solutions.',
     },
