@@ -3,17 +3,36 @@
 import { useState, useEffect } from 'react';
 import { Button } from '../common/Button';
 
+/**
+ * EventsCarousel Component
+ *
+ * A responsive carousel component that displays promotional content for Builder Academy.
+ * Features auto-advancing slides, manual navigation controls, and responsive design.
+ *
+ * Key Features:
+ * - Auto-advances every 5 seconds
+ * - Manual navigation via arrow buttons and dot indicators
+ * - Responsive design that adapts to mobile, tablet, and desktop
+ * - Smooth CSS transitions for slide changes
+ * - Accessibility support with ARIA labels
+ */
 export function EventsCarousel() {
+  // State to track which slide is currently active (0-based index)
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  /**
+   * Slide data configuration
+   * Each slide contains all the information needed to render the promotional content
+   * including styling (background color), content (title, description), and navigation (href)
+   */
   const slides = [
     {
-      id: 'events',
+      id: 'events', // Unique identifier for React key prop
       title: 'Upcoming Events',
       description: 'Join our upcoming webinars and workshops to enhance your Builder.io knowledge.',
       buttonText: 'View Events',
-      backgroundColor: '#FFEDD5',
-      href: '/events',
+      backgroundColor: '#FFEDD5', // Light orange background from Figma design
+      href: '/events', // Navigation destination
     },
     {
       id: 'certification',
@@ -21,28 +40,48 @@ export function EventsCarousel() {
       description:
         'Become a certified Builder.io expert and showcase your skills to potential employers.',
       buttonText: 'Learn More',
-      backgroundColor: '#E6F1FF',
+      backgroundColor: '#E6F1FF', // Light blue background from Figma design
       href: '/certification',
     },
   ];
 
-  // Auto-advance slides every 5 seconds
+  /**
+   * Auto-advance functionality
+   * Sets up an interval that automatically moves to the next slide every 5 seconds
+   * Uses modulo arithmetic to loop back to the first slide after the last one
+   * Cleans up the interval on component unmount to prevent memory leaks
+   */
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide(prev => (prev + 1) % slides.length);
     }, 5000);
 
+    // Cleanup function to clear interval when component unmounts
     return () => clearInterval(timer);
   }, [slides.length]);
 
+  /**
+   * Navigation function to move to the next slide
+   * Uses modulo arithmetic to wrap around to slide 0 after the last slide
+   */
   const nextSlide = () => {
     setCurrentSlide(prev => (prev + 1) % slides.length);
   };
 
+  /**
+   * Navigation function to move to the previous slide
+   * Adds slides.length before subtracting to handle negative modulo correctly
+   * This ensures we go to the last slide when clicking previous on the first slide
+   */
   const prevSlide = () => {
     setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
   };
 
+  /**
+   * Navigation function to jump directly to a specific slide
+   * Used by the dot indicators for direct navigation
+   * @param index - The zero-based index of the slide to navigate to
+   */
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
