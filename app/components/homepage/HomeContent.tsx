@@ -29,6 +29,9 @@ export function HomeContent() {
             Take Survey
           </Button>
         </div>
+
+        {/* Events and Certification Carousel */}
+        <EventsCarousel />
       </main>
 
       <Footer />
