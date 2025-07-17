@@ -2,6 +2,7 @@
 
 import { Footer } from '@/components/navigation/Footer';
 import { Button } from '../common/Button';
+import { CertificationBanner } from '../common/CertificationBanner';
 import { takeSurvey } from './takeSurvey';
 
 export function HomeContent() {
@@ -28,6 +29,14 @@ export function HomeContent() {
             Take Survey
           </Button>
         </div>
+
+        <CertificationBanner
+          onButtonClick={() => {
+            // Navigate to certification page
+            window.location.href = '/certification';
+          }}
+          className="mb-12"
+        />
       </main>
 
       <Footer />
