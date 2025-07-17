@@ -29,6 +29,14 @@ export function HomeContent() {
             Take Survey
           </Button>
         </div>
+
+        <CertificationBanner
+          onButtonClick={() => {
+            // Navigate to certification page
+            window.location.href = '/certification';
+          }}
+          className="mb-12"
+        />
       </main>
 
       <Footer />
