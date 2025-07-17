@@ -40,8 +40,8 @@ export const CertificationBanner: React.FC<CertificationBannerProps> = ({
   onButtonClick, // Optional click handler for the CTA button
   className = '', // Additional styling classes
 }) => {
-    return (
-    {/* Outer container with full width and white background */}
+  return (
+    // Outer container with full width and white background
     <div className={`w-full bg-white ${className}`}>
       {/*
         Inner content container with:
