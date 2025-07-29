@@ -9,7 +9,7 @@ export default function ContactPage() {
       <Section>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
+            <h1 className="text-4xl font-medium text-gray-900" style={{ margin: '20px 0 16px' }}>Contact Us</h1>
             <p className="text-xl text-gray-600">
               Have questions? We're here to help. Get in touch with our team.
             </p>
