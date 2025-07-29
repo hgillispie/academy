@@ -3,6 +3,7 @@
 import { Footer } from '@/components/navigation/Footer';
 import { Button } from '../common/Button';
 import { takeSurvey } from './takeSurvey';
+import { Carousel } from './Carousel';
 
 export function HomeContent() {
   return (
@@ -28,6 +29,8 @@ export function HomeContent() {
             Take Survey
           </Button>
         </div>
+
+        <Carousel />
       </main>
 
       <Footer />
