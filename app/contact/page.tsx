@@ -9,7 +9,9 @@ export default function ContactPage() {
       <Section>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-medium text-gray-900" style={{ margin: '20px 0 16px' }}>Contact Us</h1>
+            <h1 className="text-4xl font-medium text-gray-900" style={{ margin: '20px 0 16px' }}>
+              Contact Us
+            </h1>
             <p className="text-xl text-gray-600">
               Have questions? We're here to help. Get in touch with our team.
             </p>
@@ -72,9 +74,7 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <Button className="w-full">
-                  Send Message
-                </Button>
+                <Button className="w-full">Send Message</Button>
               </form>
             </div>
 
@@ -106,7 +106,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-medium text-gray-900 mb-2">Documentation</h3>
                     <p className="text-gray-600 mb-2">
-                      Check out our comprehensive documentation for detailed guides and API references.
+                      Check out our comprehensive documentation for detailed guides and API
+                      references.
                     </p>
                     <a
                       href="https://www.builder.io/c/docs"
