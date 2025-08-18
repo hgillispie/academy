@@ -2,6 +2,7 @@
 
 import { Footer } from '@/components/navigation/Footer';
 import { Button } from '../common/Button';
+import { Carousel } from './Carousel';
 import { takeSurvey } from './takeSurvey';
 
 export function HomeContent() {
