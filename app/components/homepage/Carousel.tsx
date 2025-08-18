@@ -4,26 +4,43 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '../common/Button';
 
+/**
+ * Interface defining the structure of each carousel card
+ * Used to ensure type safety and consistency across all carousel items
+ */
 interface CarouselCard {
+  /** Unique identifier for the carousel card */
   id: string;
+  /** Main heading text displayed prominently on the card */
   title: string;
+  /** Supporting text that provides additional context about the card's purpose */
   description: string;
+  /** Text displayed on the call-to-action button */
   buttonText: string;
+  /** Function executed when the user clicks the card's button */
   buttonAction: () => void;
+  /** Hex color code for the card's background color */
   backgroundColor: string;
 }
 
+/**
+ * Static configuration array containing all carousel cards
+ * Each card represents a different feature or opportunity within Builder Academy
+ * Colors are chosen to match the Figma design specifications
+ */
 const carouselCards: CarouselCard[] = [
   {
     id: 'events',
     title: 'Upcoming Events',
+    // Line 20: Description encouraging users to join educational events to improve their Builder.io skills
     description: 'Join our upcoming webinars and workshops to enhance your Builder.io knowledge.',
     buttonText: 'View Events',
     buttonAction: () => {
-      // Navigate to events page
+      // Navigate to events page where users can see upcoming webinars and workshops
+      // Using window.location.href for full page navigation
       window.location.href = '/events';
     },
-    backgroundColor: '#FFEDD5', // Orange/peach background
+    backgroundColor: '#FFEDD5', // Warm orange/peach background as specified in Figma design
   },
   {
     id: 'certification',
@@ -32,10 +49,11 @@ const carouselCards: CarouselCard[] = [
       'Become a certified Builder.io expert and showcase your skills to potential employers.',
     buttonText: 'Learn More',
     buttonAction: () => {
-      // Navigate to certification page
+      // Navigate to certification page where users can learn about getting certified
+      // Full page navigation to maintain consistency with events card behavior
       window.location.href = '/certification';
     },
-    backgroundColor: '#E6F1FF', // Blue background
+    backgroundColor: '#E6F1FF', // Cool blue background as specified in Figma design
   },
 ];
 
