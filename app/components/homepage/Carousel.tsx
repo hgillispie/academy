@@ -124,24 +124,24 @@ export function Carousel() {
 
   return (
     <div className="w-full mb-12">
-      {/* Carousel Container */}
+      {/* Main carousel container with relative positioning for absolute-positioned navigation elements */}
       <div className="relative overflow-hidden rounded-lg">
-        {/* Card */}
+        {/* Card content container with responsive padding and smooth transitions */}
         <div
           className="flex flex-col justify-center items-center gap-5 px-6 py-8 md:px-16 md:py-8 transition-all duration-500 ease-in-out"
-          style={{ backgroundColor: currentCard.backgroundColor }}
+          style={{ backgroundColor: currentCard.backgroundColor }} // Dynamic background color from card configuration
         >
-          {/* Title */}
+          {/* Card title - prominent heading matching Figma typography specifications */}
           <h2 className="text-2xl font-medium text-black text-center leading-8">
             {currentCard.title}
           </h2>
 
-          {/* Description */}
+          {/* Card description - supporting text with proper line height and max-width for readability */}
           <p className="text-gray-700 text-center text-base leading-6 max-w-2xl">
             {currentCard.description}
           </p>
 
-          {/* Button */}
+          {/* Call-to-action button using project's Button component with consistent styling */}
           <Button
             onClick={currentCard.buttonAction}
             className="bg-[#A97FF2] hover:bg-[#9665d8] text-white px-7 py-2 rounded-full"
