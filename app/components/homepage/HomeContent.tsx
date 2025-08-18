@@ -2,6 +2,7 @@
 
 import { Footer } from '@/components/navigation/Footer';
 import { Button } from '../common/Button';
+import { Carousel } from './Carousel';
 import { takeSurvey } from './takeSurvey';
 
 export function HomeContent() {
@@ -28,6 +29,9 @@ export function HomeContent() {
             Take Survey
           </Button>
         </div>
+
+        {/* Carousel Section */}
+        <Carousel />
       </main>
 
       <Footer />
