@@ -57,20 +57,36 @@ const carouselCards: CarouselCard[] = [
   },
 ];
 
+/**
+ * Carousel component that displays rotating cards for Events and Certification
+ * Features auto-play functionality, manual navigation, and responsive design
+ * Based on Figma design specifications with pixel-perfect implementation
+ */
 export function Carousel() {
+  // State to track which card is currently visible (0-based index)
   const [currentIndex, setCurrentIndex] = useState(0);
+  // State to control whether the carousel should automatically advance slides
   const [isAutoPlay, setIsAutoPlay] = useState(true);
 
-  // Auto-play functionality
+  /**
+   * Auto-play functionality using useEffect and setInterval
+   * Automatically advances to the next slide every 5 seconds when enabled
+   * Stops when user manually interacts with navigation controls
+   */
   useEffect(() => {
+    // Exit early if auto-play is disabled by user interaction
     if (!isAutoPlay) return;
 
+    // Set up interval to advance slides automatically
     const interval = setInterval(() => {
+      // Use functional update to ensure we have the latest state
+      // Modulo operation ensures we loop back to first slide after the last one
       setCurrentIndex(prevIndex => (prevIndex + 1) % carouselCards.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000); // 5-second interval provides good user experience without being too fast
 
+    // Cleanup function to prevent memory leaks when component unmounts or dependencies change
     return () => clearInterval(interval);
-  }, [isAutoPlay]);
+  }, [isAutoPlay]); // Re-run effect when auto-play state changes
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
