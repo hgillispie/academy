@@ -173,7 +173,7 @@ export default function ContactPage() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-[#a97ff2] hover:bg-[#9665d8] disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-[#a97ff2] hover:bg-[#9665d8] disabled:opacity-50 disabled:cursor-not-allowed flex flex-col justify-center items-center"
               >
                 {isSubmitting ? (
                   <>
@@ -183,7 +183,7 @@ export default function ContactPage() {
                 ) : (
                   <>
                     <Send className="w-4 h-4 mr-2" />
-                    Send Message
+                    <p>Send Message</p>
                   </>
                 )}
               </Button>
