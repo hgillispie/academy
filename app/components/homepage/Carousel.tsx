@@ -150,44 +150,49 @@ export function Carousel() {
           </Button>
         </div>
 
-        {/* Navigation Arrows */}
+        {/* Navigation arrow buttons positioned absolutely for overlay on card content */}
+        {/* Previous slide button - left side with proper accessibility labels */}
         <button
           onClick={goToPrevious}
           className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 z-10"
-          aria-label="Previous slide"
+          aria-label="Previous slide" // Screen reader accessibility
         >
           <ChevronLeft className="w-5 h-5 text-gray-700" />
         </button>
 
+        {/* Next slide button - right side with consistent styling and behavior */}
         <button
           onClick={goToNext}
           className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 z-10"
-          aria-label="Next slide"
+          aria-label="Next slide" // Screen reader accessibility
         >
           <ChevronRight className="w-5 h-5 text-gray-700" />
         </button>
       </div>
 
-      {/* Dot Indicators */}
+      {/* Dot indicator navigation - shows current position and allows direct navigation */}
       <div className="flex justify-center items-center gap-2 mt-4">
         {carouselCards.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-200 ${
-              index === currentIndex ? 'bg-[#A97FF2] scale-110' : 'bg-gray-300 hover:bg-gray-400'
+              index === currentIndex
+                ? 'bg-[#A97FF2] scale-110' // Active state with brand color and slight scale increase
+                : 'bg-gray-300 hover:bg-gray-400' // Inactive state with hover feedback
             }`}
-            aria-label={`Go to slide ${index + 1}`}
+            aria-label={`Go to slide ${index + 1}`} // Human-friendly labeling (1-based instead of 0-based)
           />
         ))}
       </div>
 
-      {/* Auto-play Control */}
+      {/* Auto-play control toggle - gives users control over automatic progression */}
       <div className="flex justify-center mt-3">
         <button
           onClick={() => setIsAutoPlay(!isAutoPlay)}
           className="text-sm text-gray-500 hover:text-gray-700 transition-colors duration-200"
         >
+          {/* Dynamic text based on current auto-play state */}
           {isAutoPlay ? 'Pause auto-play' : 'Resume auto-play'}
         </button>
       </div>
