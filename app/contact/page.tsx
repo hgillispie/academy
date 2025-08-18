@@ -21,7 +21,9 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) => {
     setForm(prev => ({
       ...prev,
       [e.target.name]: e.target.value,
@@ -31,10 +33,10 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     setSubmitted(true);
     setIsSubmitting(false);
     setForm({ name: '', email: '', subject: '', message: '' });
@@ -65,7 +67,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-white flex flex-col">
       <main className="max-w-[802px] mt-[61px] mb-12 mx-auto px-4 py-0 max-md:mt-10">
         <h1 className="text-black text-[32px] font-normal mb-6">Contact Us</h1>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {/* Contact Information */}
           <div className="lg:col-span-1">
@@ -79,14 +81,16 @@ export default function ContactPage() {
                   <p className="text-sm text-gray-500">We typically respond within 24 hours</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
                 <MapPin className="w-6 h-6 text-[#a97ff2] mt-1" />
                 <div>
                   <h3 className="font-medium mb-1">Office</h3>
                   <p className="text-gray-600">
-                    123 Builder Street<br />
-                    San Francisco, CA 94105<br />
+                    123 Builder Street
+                    <br />
+                    San Francisco, CA 94105
+                    <br />
                     United States
                   </p>
                 </div>
@@ -114,7 +118,7 @@ export default function ContactPage() {
                     placeholder="Your full name"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                     Email *
@@ -131,7 +135,7 @@ export default function ContactPage() {
                   />
                 </div>
               </div>
-              
+
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                   Subject *
@@ -153,7 +157,7 @@ export default function ContactPage() {
                   <option value="other">Other</option>
                 </select>
               </div>
-              
+
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                   Message *
@@ -169,7 +173,7 @@ export default function ContactPage() {
                   placeholder="Tell us how we can help you..."
                 />
               </div>
-              
+
               <Button
                 type="submit"
                 disabled={isSubmitting}
@@ -207,7 +211,7 @@ export default function ContactPage() {
                 <p className="text-sm text-gray-600">Browse FAQs and documentation</p>
               </div>
             </a>
-            
+
             <a
               href="https://forum.builder.io/"
               target="_blank"

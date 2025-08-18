@@ -28,7 +28,8 @@ const carouselCards: CarouselCard[] = [
   {
     id: 'certification',
     title: 'Builder.io Certification',
-    description: 'Become a certified Builder.io expert and showcase your skills to potential employers.',
+    description:
+      'Become a certified Builder.io expert and showcase your skills to potential employers.',
     buttonText: 'Learn More',
     buttonAction: () => {
       // Navigate to certification page
@@ -47,7 +48,7 @@ export function Carousel() {
     if (!isAutoPlay) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselCards.length);
+      setCurrentIndex(prevIndex => (prevIndex + 1) % carouselCards.length);
     }, 5000); // Change slide every 5 seconds
 
     return () => clearInterval(interval);
@@ -123,9 +124,7 @@ export function Carousel() {
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-200 ${
-              index === currentIndex
-                ? 'bg-[#A97FF2] scale-110'
-                : 'bg-gray-300 hover:bg-gray-400'
+              index === currentIndex ? 'bg-[#A97FF2] scale-110' : 'bg-gray-300 hover:bg-gray-400'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
