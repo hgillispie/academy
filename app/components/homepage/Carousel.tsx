@@ -88,21 +88,38 @@ export function Carousel() {
     return () => clearInterval(interval);
   }, [isAutoPlay]); // Re-run effect when auto-play state changes
 
+  /**
+   * Navigate to a specific slide by index
+   * Disables auto-play to respect user intent and prevent jarring transitions
+   * @param index - The 0-based index of the slide to navigate to
+   */
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
-    setIsAutoPlay(false); // Stop auto-play when user manually navigates
+    setIsAutoPlay(false); // Stop auto-play when user manually navigates to show respect for user control
   };
 
+  /**
+   * Navigate to the previous slide in the carousel
+   * Handles wrapping from first slide to last slide for seamless experience
+   */
   const goToPrevious = () => {
+    // If we're at the first slide (index 0), wrap around to the last slide
+    // Otherwise, go to the previous slide
     const newIndex = currentIndex === 0 ? carouselCards.length - 1 : currentIndex - 1;
     goToSlide(newIndex);
   };
 
+  /**
+   * Navigate to the next slide in the carousel
+   * Handles wrapping from last slide to first slide for seamless experience
+   */
   const goToNext = () => {
+    // Use modulo operation to wrap from last slide back to first slide
     const newIndex = (currentIndex + 1) % carouselCards.length;
     goToSlide(newIndex);
   };
 
+  // Get the currently active card based on the current index
   const currentCard = carouselCards[currentIndex];
 
   return (
