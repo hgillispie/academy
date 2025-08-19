@@ -31,7 +31,8 @@ export default function ContactPage() {
       <main className="max-w-[1200px] mt-[61px] mb-12 mx-auto px-4 py-0 max-md:mt-10">
         <h1 className="text-black text-[32px] font-semibold mb-6">Contact Us</h1>
         <p className="text-gray-600 text-lg mb-12 max-w-2xl">
-          We'd love to hear from you! Whether you have questions about Builder.io, need technical support, or want to share feedback, our team is here to help.
+          We'd love to hear from you! Whether you have questions about Builder.io, need technical
+          support, or want to share feedback, our team is here to help.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -39,7 +40,7 @@ export default function ContactPage() {
           <div className="lg:col-span-2">
             <div className="bg-gray-50 p-8 rounded-lg border border-gray-200">
               <h2 className="text-xl font-medium mb-6">Send us a Message</h2>
-              
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
@@ -57,7 +58,7 @@ export default function ContactPage() {
                       placeholder="Your full name"
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                       Email *
@@ -124,7 +125,10 @@ export default function ContactPage() {
             <p className="text-sm text-gray-600 mb-4">
               Find answers in our comprehensive documentation
             </p>
-            <a href="https://www.builder.io/c/docs/introduction" className="text-[#a97ff2] hover:text-[#9665d8] text-sm">
+            <a
+              href="https://www.builder.io/c/docs/introduction"
+              className="text-[#a97ff2] hover:text-[#9665d8] text-sm"
+            >
               Browse Docs →
             </a>
           </div>
@@ -132,10 +136,11 @@ export default function ContactPage() {
           <div className="text-center p-6 border border-gray-200 rounded-lg">
             <MessageCircle className="w-8 h-8 text-[#a97ff2] mx-auto mb-4" />
             <h3 className="font-medium mb-2">Community</h3>
-            <p className="text-sm text-gray-600 mb-4">
-              Join our active community of developers
-            </p>
-            <a href="https://forum.builder.io/" className="text-[#a97ff2] hover:text-[#9665d8] text-sm">
+            <p className="text-sm text-gray-600 mb-4">Join our active community of developers</p>
+            <a
+              href="https://forum.builder.io/"
+              className="text-[#a97ff2] hover:text-[#9665d8] text-sm"
+            >
               Join Community →
             </a>
           </div>
@@ -143,9 +148,7 @@ export default function ContactPage() {
           <div className="text-center p-6 border border-gray-200 rounded-lg">
             <Book className="w-8 h-8 text-[#a97ff2] mx-auto mb-4" />
             <h3 className="font-medium mb-2">Learning</h3>
-            <p className="text-sm text-gray-600 mb-4">
-              Take courses to master Builder.io
-            </p>
+            <p className="text-sm text-gray-600 mb-4">Take courses to master Builder.io</p>
             <a href="/courses" className="text-[#a97ff2] hover:text-[#9665d8] text-sm">
               Start Learning →
             </a>
