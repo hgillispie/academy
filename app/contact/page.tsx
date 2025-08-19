@@ -9,7 +9,7 @@ export default function ContactPage() {
       <Section>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
+            <h1 className="text-4xl font-bold text-gray-900 my-5 mb-4">Contact Us</h1>
             <p className="text-xl text-gray-600">
               Have questions or need help? We're here to support your learning journey.
             </p>
@@ -122,19 +122,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-[#cf0ec7] to-[#9f0ba3] rounded-lg shadow-lg p-8 text-white">
-                <h2 className="text-2xl font-semibold mb-4">Need Immediate Help?</h2>
-                <p className="mb-4">
-                  Check out our Help page for quick answers to frequently asked questions.
-                </p>
-                <Button
-                  variant="secondary"
-                  onClick={() => window.location.href = '/help'}
-                  className="bg-white text-[#cf0ec7] hover:bg-gray-100"
-                >
-                  Visit Help Center
-                </Button>
-              </div>
             </div>
           </div>
         </div>
