@@ -1,10 +1,10 @@
 /**
  * Carousel Component
- * 
+ *
  * A fully responsive and accessible carousel component that displays featured content cards.
  * Based on Figma design specifications with auto-advancing slides, manual navigation,
  * and WCAG 2.3 accessibility compliance.
- * 
+ *
  * Features:
  * - Auto-advancing slides every 5 seconds
  * - Manual navigation via arrows and dot indicators
@@ -75,7 +75,7 @@ const carouselData: CarouselCard[] = [
 
 /**
  * Main Carousel Component
- * 
+ *
  * Renders a responsive carousel with auto-advancing slides and manual navigation controls.
  * Implements accessibility best practices including ARIA attributes, keyboard navigation,
  * and screen reader support.
@@ -83,13 +83,13 @@ const carouselData: CarouselCard[] = [
 export function Carousel() {
   // State to track which slide is currently visible (0-based index)
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   // State to control whether the carousel should auto-advance
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   /**
    * Effect hook for auto-advancing carousel slides
-   * 
+   *
    * Automatically moves to the next slide every 5 seconds when auto-play is enabled.
    * Cleans up the interval when the component unmounts or auto-play is disabled.
    */
@@ -108,13 +108,13 @@ export function Carousel() {
 
   /**
    * Navigate to a specific slide by index
-   * 
+   *
    * @param index - The index of the slide to navigate to (0-based)
    */
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
     setIsAutoPlaying(false); // Disable auto-play when user manually navigates
-    
+
     // Resume auto-play after 10 seconds of inactivity to improve UX
     setTimeout(() => setIsAutoPlaying(true), 10000);
   };
@@ -126,7 +126,7 @@ export function Carousel() {
   const goToPrevious = () => {
     setCurrentIndex(prev => (prev - 1 + carouselData.length) % carouselData.length);
     setIsAutoPlaying(false); // Disable auto-play when user manually navigates
-    
+
     // Resume auto-play after 10 seconds of inactivity
     setTimeout(() => setIsAutoPlaying(true), 10000);
   };
@@ -138,7 +138,7 @@ export function Carousel() {
   const goToNext = () => {
     setCurrentIndex(prev => (prev + 1) % carouselData.length);
     setIsAutoPlaying(false); // Disable auto-play when user manually navigates
-    
+
     // Resume auto-play after 10 seconds of inactivity
     setTimeout(() => setIsAutoPlaying(true), 10000);
   };
@@ -177,12 +177,12 @@ export function Carousel() {
                 <h2 className="text-xl md:text-2xl font-medium text-black text-center leading-8">
                   {card.title}
                 </h2>
-                
+
                 {/* Card Description */}
                 <p className="text-sm md:text-base text-gray-700 text-center leading-6 max-w-2xl">
                   {card.description}
                 </p>
-                
+
                 {/* Call-to-Action Button */}
                 <Button
                   onClick={card.onClick}
@@ -254,7 +254,7 @@ export function Carousel() {
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-200 ${
-              index === currentIndex 
+              index === currentIndex
                 ? 'bg-[#A97FF2] scale-110' // Active slide: purple background, slightly larger
                 : 'bg-gray-300 hover:bg-gray-400' // Inactive slides: gray background with hover state
             }`}
