@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, MessageCircle, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { Mail, MessageCircle, Phone, MapPin, Clock, Send, Book } from 'lucide-react';
 import { Button } from '../components/common/Button';
 import { useState } from 'react';
 
