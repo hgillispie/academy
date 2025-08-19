@@ -13,6 +13,7 @@ const navItems = [
   // { path: "/events", label: "Events" },
   // { path: "/certification", label: "Certification" },
   { path: '/help', label: 'Help' },
+  { path: '/contact', label: 'Contact Us' },
 ];
 
 export const Navbar = () => {
