@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '../components/common/Button';
-import { Section } from '../components/common/Section';
+import Section from '../components/common/Section';
 
 export default function ContactPage() {
   return (
