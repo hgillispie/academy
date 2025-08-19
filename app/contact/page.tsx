@@ -24,7 +24,7 @@ export default function ContactPage() {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -148,7 +148,10 @@ export default function ContactPage() {
 
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name <span className="text-red-500" aria-label="required">*</span>
+                      Full Name{' '}
+                      <span className="text-red-500" aria-label="required">
+                        *
+                      </span>
                     </label>
                     <input
                       type="text"
@@ -174,7 +177,10 @@ export default function ContactPage() {
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address <span className="text-red-500" aria-label="required">*</span>
+                      Email Address{' '}
+                      <span className="text-red-500" aria-label="required">
+                        *
+                      </span>
                     </label>
                     <input
                       type="email"
@@ -199,8 +205,14 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                      Subject <span className="text-red-500" aria-label="required">*</span>
+                    <label
+                      htmlFor="subject"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      Subject{' '}
+                      <span className="text-red-500" aria-label="required">
+                        *
+                      </span>
                     </label>
                     <input
                       type="text"
@@ -224,8 +236,14 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                      Message <span className="text-red-500" aria-label="required">*</span>
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      Message{' '}
+                      <span className="text-red-500" aria-label="required">
+                        *
+                      </span>
                     </label>
                     <textarea
                       id="message"
@@ -276,18 +294,19 @@ export default function ContactPage() {
                     <h3 className="font-medium text-gray-900">Email Support</h3>
                     <p className="text-gray-600">support@builder.io</p>
                   </div>
-                  
+
                   <div>
                     <h3 className="font-medium text-gray-900">Documentation</h3>
                     <p className="text-gray-600">
                       Check out our comprehensive documentation for answers to common questions.
                     </p>
                   </div>
-                  
+
                   <div>
                     <h3 className="font-medium text-gray-900">Community</h3>
                     <p className="text-gray-600">
-                      Join our community forum to connect with other learners and get help from experts.
+                      Join our community forum to connect with other learners and get help from
+                      experts.
                     </p>
                   </div>
                 </div>
@@ -310,7 +329,6 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
