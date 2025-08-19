@@ -13,6 +13,11 @@ export function HomeContent() {
           Welcome to Builder Academy
         </h1>
 
+        {/* Featured Content Carousel */}
+        <div className="mb-12">
+          <Carousel />
+        </div>
+
         <div className="bg-[#f5f0ff] p-8 rounded-2xl border border-[#a97ff2] mb-12">
           <h2 className="text-2xl font-medium mb-4 text-black">
             Help Us Improve Your Learning Experience
