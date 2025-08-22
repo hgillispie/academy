@@ -63,7 +63,7 @@ export function Carousel() {
       setCurrentIndex(prevIndex =>
         // If we're at the last slide, go back to first slide (index 0)
         // Otherwise, advance to the next slide
-        prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1
+        prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1,
       );
     }, 5000); // 5000ms = 5 seconds
 
