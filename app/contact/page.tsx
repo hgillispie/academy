@@ -87,7 +87,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-[1030px] mx-auto px-6 py-12">
-        <h1 className="text-[42px] font-normal text-black mb-8 text-center">
+        <h1 className="text-[42px] font-semibold text-black mb-8 text-center">
           Contact Us
         </h1>
         
@@ -173,28 +173,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="mb-6">
-                <label
-                  htmlFor="inquiryType"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Inquiry Type
-                </label>
-                <select
-                  id="inquiryType"
-                  name="inquiryType"
-                  value={formData.inquiryType}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#a97ff2] focus:border-transparent outline-none transition-colors"
-                >
-                  <option value="general">General Inquiry</option>
-                  <option value="support">Technical Support</option>
-                  <option value="course">Course Question</option>
-                  <option value="feedback">Feedback</option>
-                  <option value="partnership">Partnership</option>
-                  <option value="billing">Billing</option>
-                </select>
-              </div>
 
               <div className="mb-6">
                 <label
@@ -271,35 +249,6 @@ export default function ContactPage() {
             </form>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-medium mb-4 text-black">Support</h3>
-              <p className="text-gray-600 mb-4">
-                For technical issues and course-related questions
-              </p>
-              <a 
-                href="https://forum.builder.io" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <Button>Visit Community Forum</Button>
-              </a>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg border border-gray-200">
-              <h3 className="text-xl font-medium mb-4 text-black">Documentation</h3>
-              <p className="text-gray-600 mb-4">
-                Find answers in our comprehensive documentation
-              </p>
-              <a 
-                href="https://www.builder.io/c/docs/introduction" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <Button>View Documentation</Button>
-              </a>
-            </div>
-          </div>
 
           <div className="bg-gray-50 p-8 rounded-2xl">
             <h3 className="text-xl font-medium mb-4 text-black">Connect With Us</h3>
