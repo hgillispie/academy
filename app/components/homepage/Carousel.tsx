@@ -14,20 +14,21 @@ const carouselItems = [
       window.open('/events', '_blank');
     },
     backgroundColor: 'bg-orange-100',
-    borderColor: 'border-orange-200'
+    borderColor: 'border-orange-200',
   },
   {
     id: 'certification',
     title: 'Builder.io Certification',
-    description: 'Become a certified Builder.io expert and showcase your skills to potential employers.',
+    description:
+      'Become a certified Builder.io expert and showcase your skills to potential employers.',
     buttonText: 'Learn More',
     buttonAction: () => {
       // Navigate to certification page or external link
       window.open('/certification', '_blank');
     },
     backgroundColor: 'bg-blue-100',
-    borderColor: 'border-blue-200'
-  }
+    borderColor: 'border-blue-200',
+  },
 ];
 
 export function Carousel() {
@@ -39,9 +40,7 @@ export function Carousel() {
     if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => 
-        prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1
-      );
+      setCurrentIndex(prevIndex => (prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1));
     }, 5000);
 
     return () => clearInterval(interval);
@@ -69,7 +68,7 @@ export function Carousel() {
   return (
     <div className="relative w-full max-w-4xl mx-auto mb-12">
       {/* Main carousel container */}
-      <div 
+      <div
         className={`relative overflow-hidden rounded-lg border transition-all duration-500 ${currentItem.backgroundColor} ${currentItem.borderColor}`}
         aria-live="polite"
         aria-label="Featured content carousel"
@@ -79,11 +78,11 @@ export function Carousel() {
           <h2 className="text-2xl md:text-3xl font-medium text-black mb-4 leading-tight">
             {currentItem.title}
           </h2>
-          
+
           <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 max-w-2xl mx-auto">
             {currentItem.description}
           </p>
-          
+
           <Button
             onClick={currentItem.buttonAction}
             className="inline-flex items-center justify-center"
@@ -98,8 +97,18 @@ export function Carousel() {
           className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white shadow-lg flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#a97ff2] focus:ring-offset-2"
           aria-label="Previous slide"
         >
-          <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          <svg
+            className="w-5 h-5 text-gray-700"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
         </button>
 
@@ -108,7 +117,12 @@ export function Carousel() {
           className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white shadow-lg flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#a97ff2] focus:ring-offset-2"
           aria-label="Next slide"
         >
-          <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg
+            className="w-5 h-5 text-gray-700"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
@@ -121,9 +135,7 @@ export function Carousel() {
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#a97ff2] focus:ring-offset-2 ${
-              index === currentIndex
-                ? 'bg-[#a97ff2] scale-110'
-                : 'bg-gray-300 hover:bg-gray-400'
+              index === currentIndex ? 'bg-[#a97ff2] scale-110' : 'bg-gray-300 hover:bg-gray-400'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

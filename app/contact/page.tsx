@@ -9,7 +9,7 @@ export default function ContactPage() {
     email: '',
     subject: '',
     message: '',
-    inquiryType: 'general'
+    inquiryType: 'general',
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -43,7 +43,9 @@ export default function ContactPage() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
 
@@ -75,7 +77,7 @@ export default function ContactPage() {
         email: '',
         subject: '',
         message: '',
-        inquiryType: 'general'
+        inquiryType: 'general',
       });
     } catch (error) {
       console.error('Form submission error:', error);
@@ -87,16 +89,14 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-[1030px] mx-auto px-6 py-12">
-        <h1 className="text-[42px] font-semibold text-black mb-8 text-center">
-          Contact Us
-        </h1>
-        
+        <h1 className="text-[42px] font-semibold text-black mb-8 text-center">Contact Us</h1>
+
         <div className="max-w-2xl mx-auto">
           <div className="bg-[#f5f0ff] p-8 rounded-2xl border border-[#a97ff2] mb-8">
             <h2 className="text-2xl font-medium mb-4 text-black">Get in Touch</h2>
             <p className="text-gray-600 mb-6 text-lg leading-relaxed">
-              We're here to help! Whether you have questions about our courses, need technical support,
-              or want to provide feedback, we'd love to hear from you.
+              We're here to help! Whether you have questions about our courses, need technical
+              support, or want to provide feedback, we'd love to hear from you.
             </p>
           </div>
 
@@ -110,18 +110,19 @@ export default function ContactPage() {
                 role="alert"
                 aria-live="polite"
               >
-                <strong>Thank you!</strong> Your message has been sent successfully. We'll get back to you soon.
+                <strong>Thank you!</strong> Your message has been sent successfully. We'll get back
+                to you soon.
               </div>
             )}
 
             <form onSubmit={handleSubmit} noValidate aria-label="Contact form">
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Full Name <span className="text-red-500" aria-label="required">*</span>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    Full Name{' '}
+                    <span className="text-red-500" aria-label="required">
+                      *
+                    </span>
                   </label>
                   <input
                     type="text"
@@ -145,11 +146,11 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Email Address <span className="text-red-500" aria-label="required">*</span>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address{' '}
+                    <span className="text-red-500" aria-label="required">
+                      *
+                    </span>
                   </label>
                   <input
                     type="email"
@@ -173,13 +174,12 @@ export default function ContactPage() {
                 </div>
               </div>
 
-
               <div className="mb-6">
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Subject <span className="text-red-500" aria-label="required">*</span>
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                  Subject{' '}
+                  <span className="text-red-500" aria-label="required">
+                    *
+                  </span>
                 </label>
                 <input
                   type="text"
@@ -203,11 +203,11 @@ export default function ContactPage() {
               </div>
 
               <div className="mb-6">
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Message <span className="text-red-500" aria-label="required">*</span>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  Message{' '}
+                  <span className="text-red-500" aria-label="required">
+                    *
+                  </span>
                 </label>
                 <textarea
                   id="message"
@@ -249,16 +249,15 @@ export default function ContactPage() {
             </form>
           </div>
 
-
           <div className="bg-gray-50 p-8 rounded-2xl">
             <h3 className="text-xl font-medium mb-4 text-black">Connect With Us</h3>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <span className="font-medium text-gray-700">Discord:</span>
-                <a 
-                  href="https://discord.gg/builder" 
+                <a
+                  href="https://discord.gg/builder"
                   className="text-[#a97ff2] hover:text-[#9665d8] transition-colors"
-                  target="_blank" 
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   Join our Discord community
@@ -266,10 +265,10 @@ export default function ContactPage() {
               </div>
               <div className="flex items-center gap-3">
                 <span className="font-medium text-gray-700">GitHub:</span>
-                <a 
-                  href="https://github.com/builderio/builder" 
+                <a
+                  href="https://github.com/builderio/builder"
                   className="text-[#a97ff2] hover:text-[#9665d8] transition-colors"
-                  target="_blank" 
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   Follow us on GitHub
@@ -277,8 +276,8 @@ export default function ContactPage() {
               </div>
               <div className="flex items-center gap-3">
                 <span className="font-medium text-gray-700">Email:</span>
-                <a 
-                  href="mailto:support@builder.io" 
+                <a
+                  href="mailto:support@builder.io"
                   className="text-[#a97ff2] hover:text-[#9665d8] transition-colors"
                 >
                   support@builder.io
@@ -288,14 +287,8 @@ export default function ContactPage() {
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-gray-600 text-lg mb-4">
-              Want to learn more about Builder.io?
-            </p>
-            <a 
-              href="https://www.builder.io" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
+            <p className="text-gray-600 text-lg mb-4">Want to learn more about Builder.io?</p>
+            <a href="https://www.builder.io" target="_blank" rel="noopener noreferrer">
               <Button>Visit Builder.io</Button>
             </a>
           </div>
