@@ -3,6 +3,10 @@
 import { useState, useEffect } from 'react';
 import { Button } from '../common/Button';
 
+/**
+ * Configuration array containing all carousel slide data
+ * Each item represents a slide with its content, styling, and actions
+ */
 const carouselItems = [
   {
     id: 'events',
@@ -31,38 +35,84 @@ const carouselItems = [
   },
 ];
 
+/**
+ * Carousel component that displays rotating content slides with navigation controls
+ * Features auto-advance functionality, manual navigation, and accessibility support
+ *
+ * @returns {JSX.Element} A fully responsive carousel with events and certification content
+ */
 export function Carousel() {
+  // Track which slide is currently being displayed (0-based index)
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Control whether the carousel should automatically advance slides
+  // Set to false when user manually navigates to prevent interference
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  // Auto-advance carousel every 5 seconds
+  /**
+   * Auto-advance carousel functionality
+   * Automatically moves to the next slide every 5 seconds when auto-play is enabled
+   * Loops back to the first slide when reaching the end
+   */
   useEffect(() => {
+    // Exit early if auto-play is disabled (e.g., user is manually navigating)
     if (!isAutoPlaying) return;
 
+    // Set up interval to advance slides every 5 seconds
     const interval = setInterval(() => {
-      setCurrentIndex(prevIndex => (prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1));
-    }, 5000);
+      setCurrentIndex(prevIndex =>
+        // If we're at the last slide, go back to first slide (index 0)
+        // Otherwise, advance to the next slide
+        prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // 5000ms = 5 seconds
 
+    // Cleanup function: clear the interval when component unmounts or dependencies change
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying]); // Re-run effect when isAutoPlaying changes
 
+  /**
+   * Navigate to a specific slide by index
+   * Temporarily disables auto-play to prevent interference with user interaction
+   * Re-enables auto-play after 10 seconds of inactivity
+   *
+   * @param {number} index - The slide index to navigate to (0-based)
+   */
   const goToSlide = (index: number) => {
+    // Update the current slide index
     setCurrentIndex(index);
+
+    // Pause auto-play so it doesn't interfere with user's manual navigation
     setIsAutoPlaying(false);
-    // Resume auto-play after 10 seconds of inactivity
+
+    // Resume auto-play after 10 seconds of user inactivity
+    // This provides a good balance between user control and automatic progression
     setTimeout(() => setIsAutoPlaying(true), 10000);
   };
 
+  /**
+   * Navigate to the previous slide
+   * Wraps around to the last slide if currently on the first slide
+   */
   const goToPrevious = () => {
+    // If we're on the first slide (index 0), wrap around to the last slide
+    // Otherwise, go to the previous slide
     const newIndex = currentIndex === 0 ? carouselItems.length - 1 : currentIndex - 1;
     goToSlide(newIndex);
   };
 
+  /**
+   * Navigate to the next slide
+   * Wraps around to the first slide if currently on the last slide
+   */
   const goToNext = () => {
+    // If we're on the last slide, wrap around to the first slide (index 0)
+    // Otherwise, advance to the next slide
     const newIndex = currentIndex === carouselItems.length - 1 ? 0 : currentIndex + 1;
     goToSlide(newIndex);
   };
 
+  // Get the data for the currently displayed slide
   const currentItem = carouselItems[currentIndex];
 
   return (
