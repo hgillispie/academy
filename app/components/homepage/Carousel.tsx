@@ -32,7 +32,7 @@ export interface CarouselProps {
 
 /**
  * Carousel Component
- * 
+ *
  * A fully-featured carousel component that displays slides with:
  * - Navigation controls (arrow buttons and pagination dots)
  * - Auto-play functionality with configurable timing
@@ -40,7 +40,7 @@ export interface CarouselProps {
  * - Accessibility features (ARIA labels, keyboard navigation)
  * - Support for both image slides and custom React content
  * - Responsive design with size variants
- * 
+ *
  * The carousel manages its own internal state for slide navigation and provides
  * callbacks for external state management when needed.
  */
@@ -58,13 +58,13 @@ export function Carousel({
 }: CarouselProps) {
   // State management for current slide index
   const [index, setIndex] = useState(0);
-  
+
   // Ref to store auto-play interval ID for cleanup
   const autoplayRef = useRef<number | null>(null);
-  
+
   // Ref to track touch start position for swipe gesture detection
   const touchStartX = useRef<number | null>(null);
-  
+
   // Cache slides count for performance and readability
   const slidesCount = slides.length;
 
@@ -79,7 +79,7 @@ export function Carousel({
   /**
    * Effect: Auto-play functionality
    * Sets up and manages the auto-play interval when enabled
-   * 
+   *
    * - Only runs when autoPlay > 0 and component is not disabled
    * - Automatically advances to next slide at specified interval
    * - Cleans up interval on component unmount or when dependencies change
@@ -88,9 +88,9 @@ export function Carousel({
   useEffect(() => {
     if (autoPlay && autoPlay > 0 && !disabled) {
       autoplayRef.current = window.setInterval(() => {
-        setIndex((i) => (i + 1) % slidesCount);
+        setIndex(i => (i + 1) % slidesCount);
       }, autoPlay);
-      
+
       // Cleanup function - clear interval when effect re-runs or component unmounts
       return () => {
         if (autoplayRef.current) {
@@ -105,25 +105,25 @@ export function Carousel({
    * Navigation helper: Go to previous slide
    * Uses modulo arithmetic to wrap around to last slide when at first slide
    */
-  const prev = () => setIndex((i) => (i - 1 + slidesCount) % slidesCount);
-  
+  const prev = () => setIndex(i => (i - 1 + slidesCount) % slidesCount);
+
   /**
-   * Navigation helper: Go to next slide  
+   * Navigation helper: Go to next slide
    * Uses modulo arithmetic to wrap around to first slide when at last slide
    */
-  const next = () => setIndex((i) => (i + 1) % slidesCount);
+  const next = () => setIndex(i => (i + 1) % slidesCount);
 
   /**
    * Touch event handler: Start of swipe gesture
-   * 
+   *
    * - Records the initial touch X position for swipe distance calculation
    * - Pauses auto-play while user is interacting to prevent conflicts
-   * 
+   *
    * @param e - Touch event containing touch coordinates
    */
   function onTouchStart(e: React.TouchEvent) {
     touchStartX.current = e.touches[0].clientX;
-    
+
     // Pause auto-play during user interaction
     if (autoplayRef.current) {
       clearInterval(autoplayRef.current);
@@ -132,21 +132,21 @@ export function Carousel({
 
   /**
    * Touch event handler: End of swipe gesture
-   * 
+   *
    * - Calculates swipe distance and direction
    * - Triggers navigation if swipe distance exceeds threshold (40px)
    * - Positive delta (swipe right) = previous slide
    * - Negative delta (swipe left) = next slide
    * - Resets touch tracking state
-   * 
+   *
    * @param e - Touch event containing final touch coordinates
    */
   function onTouchEnd(e: React.TouchEvent) {
     if (touchStartX.current == null) return;
-    
+
     // Calculate horizontal swipe distance
     const dx = e.changedTouches[0].clientX - touchStartX.current;
-    
+
     // Only trigger navigation if swipe distance exceeds threshold
     if (Math.abs(dx) > 40) {
       if (dx > 0) {
@@ -155,7 +155,7 @@ export function Carousel({
         next(); // Swipe left = next slide
       }
     }
-    
+
     // Reset touch tracking
     touchStartX.current = null;
   }
@@ -179,9 +179,9 @@ export function Carousel({
         */}
         <div
           className="carousel-inner flex transition-transform duration-500 ease-in-out h-full"
-          style={{ 
-            transform: `translateX(-${index * 100}%)`, 
-            width: `${slidesCount * 100}%` 
+          style={{
+            transform: `translateX(-${index * 100}%)`,
+            width: `${slidesCount * 100}%`,
           }}
         >
           {slides.map((slide, i) => (
@@ -200,9 +200,7 @@ export function Carousel({
                 />
               ) : (
                 // Custom content slide: render React component in centered container
-                <div className="w-full h-full flex items-center justify-center">
-                  {slide}
-                </div>
+                <div className="w-full h-full flex items-center justify-center">{slide}</div>
               )}
             </div>
           ))}
@@ -235,7 +233,7 @@ export function Carousel({
                 </svg>
               </button>
             </div>
-            
+
             {/* Next slide button - positioned on right side */}
             <div className="absolute right-4 top-1/2 -translate-y-1/2 z-10">
               <button
@@ -274,8 +272,8 @@ export function Carousel({
               key={i}
               aria-label={`Go to slide ${i + 1}`}
               className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                i === index 
-                  ? 'bg-[#a97ff2] scale-110'  // Active dot: brand color + scale
+                i === index
+                  ? 'bg-[#a97ff2] scale-110' // Active dot: brand color + scale
                   : 'bg-gray-300 hover:bg-gray-400' // Inactive dot: gray with hover state
               }`}
               onClick={() => setIndex(i)}
