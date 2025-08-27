@@ -8,7 +8,7 @@ export default function ContactPage() {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -52,10 +52,10 @@ export default function ContactPage() {
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       // Here you would typically send the data to your backend
       console.log('Contact form submitted:', formData);
-      
+
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
@@ -80,7 +80,8 @@ export default function ContactPage() {
           <div className="text-center mb-8">
             <h1 className="text-3xl font-medium text-gray-900 mb-4">Contact Us</h1>
             <p className="text-gray-600">
-              Have a question or need help? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+              Have a question or need help? We'd love to hear from you. Send us a message and we'll
+              respond as soon as possible.
             </p>
           </div>
 
@@ -89,7 +90,11 @@ export default function ContactPage() {
               <div className="flex">
                 <div className="flex-shrink-0">
                   <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 </div>
                 <div className="ml-3">
@@ -106,7 +111,11 @@ export default function ContactPage() {
               <div className="flex">
                 <div className="flex-shrink-0">
                   <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 </div>
                 <div className="ml-3">
@@ -127,7 +136,7 @@ export default function ContactPage() {
                 type="text"
                 id="name"
                 value={formData.name}
-                onChange={(e) => handleChange('name', e.target.value)}
+                onChange={e => handleChange('name', e.target.value)}
                 className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#a97ff2] focus:border-[#a97ff2] ${
                   errors.name ? 'border-red-300' : 'border-gray-300'
                 }`}
@@ -144,7 +153,7 @@ export default function ContactPage() {
                 type="email"
                 id="email"
                 value={formData.email}
-                onChange={(e) => handleChange('email', e.target.value)}
+                onChange={e => handleChange('email', e.target.value)}
                 className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#a97ff2] focus:border-[#a97ff2] ${
                   errors.email ? 'border-red-300' : 'border-gray-300'
                 }`}
@@ -161,7 +170,7 @@ export default function ContactPage() {
                 type="text"
                 id="subject"
                 value={formData.subject}
-                onChange={(e) => handleChange('subject', e.target.value)}
+                onChange={e => handleChange('subject', e.target.value)}
                 className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#a97ff2] focus:border-[#a97ff2] ${
                   errors.subject ? 'border-red-300' : 'border-gray-300'
                 }`}
@@ -178,7 +187,7 @@ export default function ContactPage() {
                 id="message"
                 rows={5}
                 value={formData.message}
-                onChange={(e) => handleChange('message', e.target.value)}
+                onChange={e => handleChange('message', e.target.value)}
                 className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#a97ff2] focus:border-[#a97ff2] ${
                   errors.message ? 'border-red-300' : 'border-gray-300'
                 }`}
@@ -188,8 +197,8 @@ export default function ContactPage() {
             </div>
 
             <div className="flex justify-end">
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 disabled={isSubmitting}
                 className={isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}
               >

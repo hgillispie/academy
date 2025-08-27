@@ -40,7 +40,7 @@ export function Carousel({
   useEffect(() => {
     if (autoPlay && autoPlay > 0 && !disabled) {
       autoplayRef.current = window.setInterval(() => {
-        setIndex((i) => (i + 1) % slidesCount);
+        setIndex(i => (i + 1) % slidesCount);
       }, autoPlay);
       return () => {
         if (autoplayRef.current) {
@@ -51,8 +51,8 @@ export function Carousel({
     return;
   }, [autoPlay, slidesCount, disabled]);
 
-  const prev = () => setIndex((i) => (i - 1 + slidesCount) % slidesCount);
-  const next = () => setIndex((i) => (i + 1) % slidesCount);
+  const prev = () => setIndex(i => (i - 1 + slidesCount) % slidesCount);
+  const next = () => setIndex(i => (i + 1) % slidesCount);
 
   function onTouchStart(e: React.TouchEvent) {
     touchStartX.current = e.touches[0].clientX;
@@ -85,18 +85,20 @@ export function Carousel({
           style={{ transform: `translateX(-${index * 100}%)`, width: `${slidesCount * 100}%` }}
         >
           {slides.map((slide, i) => (
-            <div key={i} style={{ width: `${100 / slidesCount}%` }} className="carousel-slide flex-shrink-0 h-full">
+            <div
+              key={i}
+              style={{ width: `${100 / slidesCount}%` }}
+              className="carousel-slide flex-shrink-0 h-full"
+            >
               {typeof slide === 'string' ? (
-                <img 
-                  src={slide} 
-                  alt={altTexts[i] ?? ''} 
-                  className="w-full h-full object-cover" 
-                  loading={i === 0 ? 'eager' : 'lazy'} 
+                <img
+                  src={slide}
+                  alt={altTexts[i] ?? ''}
+                  className="w-full h-full object-cover"
+                  loading={i === 0 ? 'eager' : 'lazy'}
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center">
-                  {slide}
-                </div>
+                <div className="w-full h-full flex items-center justify-center">{slide}</div>
               )}
             </div>
           ))}
@@ -112,7 +114,12 @@ export function Carousel({
                 className="bg-white/80 hover:bg-white text-gray-800 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
                 </svg>
               </button>
             </div>
@@ -124,7 +131,12 @@ export function Carousel({
                 className="bg-white/80 hover:bg-white text-gray-800 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </button>
             </div>
@@ -139,9 +151,7 @@ export function Carousel({
               key={i}
               aria-label={`Go to slide ${i + 1}`}
               className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                i === index 
-                  ? 'bg-[#a97ff2] scale-110' 
-                  : 'bg-gray-300 hover:bg-gray-400'
+                i === index ? 'bg-[#a97ff2] scale-110' : 'bg-gray-300 hover:bg-gray-400'
               }`}
               onClick={() => setIndex(i)}
               disabled={disabled}

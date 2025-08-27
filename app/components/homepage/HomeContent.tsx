@@ -17,10 +17,7 @@ export function HomeContent() {
 
         <div className="mb-16">
           <Carousel
-            slides={[
-              <EventsCard key="events" />,
-              <CertificationCard key="certification" />
-            ]}
+            slides={[<EventsCard key="events" />, <CertificationCard key="certification" />]}
             size="lg"
             autoPlay={5000}
             showArrows={true}
