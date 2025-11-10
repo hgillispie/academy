@@ -51,7 +51,7 @@ export const Carousel: React.FC<CarouselProps> = ({
    * Uses useCallback to memoize the function and prevent unnecessary re-renders.
    */
   const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % slides.length);
+    setCurrentIndex(prev => (prev + 1) % slides.length);
   }, [slides.length]);
 
   /**
@@ -60,7 +60,7 @@ export const Carousel: React.FC<CarouselProps> = ({
    * Uses useCallback to memoize the function and prevent unnecessary re-renders.
    */
   const prevSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+    setCurrentIndex(prev => (prev - 1 + slides.length) % slides.length);
   }, [slides.length]);
 
   /**
