@@ -119,17 +119,26 @@ export const Carousel: React.FC<CarouselProps> = ({
   };
 
   return (
+    // Main carousel container with relative positioning for absolute-positioned controls
     <div className={`relative w-full ${className}`}>
+      {/* Slide viewport - hides overflow and handles touch events for swipe gestures */}
       <div
         className="overflow-hidden"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
+        {/*
+          Slides container - uses flexbox to arrange slides horizontally.
+          Transform property shifts the container left/right to show different slides.
+          Each slide is 100% width, so translateX(-100%) shows slide 2, translateX(-200%) shows slide 3, etc.
+          Transition provides smooth animation when changing slides.
+        */}
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
+          {/* Render each slide as a full-width, non-shrinking flex item */}
           {slides.map((slide, index) => (
             <div key={index} className="w-full flex-shrink-0">
               {slide}
@@ -138,13 +147,16 @@ export const Carousel: React.FC<CarouselProps> = ({
         </div>
       </div>
 
+      {/* Navigation arrows - only shown if enabled and there's more than one slide */}
       {showArrows && slides.length > 1 && (
         <>
+          {/* Previous slide button - positioned on the left, vertically centered */}
           <button
             onClick={prevSlide}
             className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition-all z-10"
             aria-label="Previous slide"
           >
+            {/* Left chevron icon */}
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
@@ -154,11 +166,14 @@ export const Carousel: React.FC<CarouselProps> = ({
               />
             </svg>
           </button>
+
+          {/* Next slide button - positioned on the right, vertically centered */}
           <button
             onClick={nextSlide}
             className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition-all z-10"
             aria-label="Next slide"
           >
+            {/* Right chevron icon */}
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
@@ -166,13 +181,16 @@ export const Carousel: React.FC<CarouselProps> = ({
         </>
       )}
 
+      {/* Pagination dots - only shown if enabled and there's more than one slide */}
       {showDots && slides.length > 1 && (
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          {/* Render a dot for each slide */}
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
               className={`w-2 h-2 rounded-full transition-all ${
+                // Active dot is wider and uses brand color, inactive dots are gray
                 index === currentIndex ? 'bg-[#a97ff2] w-8' : 'bg-gray-300 hover:bg-gray-400'
               }`}
               aria-label={`Go to slide ${index + 1}`}
