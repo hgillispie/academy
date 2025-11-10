@@ -10,12 +10,13 @@ export function HomeContent() {
     // Builder.io Certification Card
     <div key="certification" className="w-full px-16">
       <div
-        className="rounded-lg p-12 flex flex-col items-center justify-center gap-5 mx-auto flex flex-col items-center justify-center"
+        className="flex flex-col items-center justify-center mx-auto"
         style={{
           backgroundColor: 'rgba(74, 226, 226, 0.72)',
           borderRadius: '8px',
           maxWidth: '896px',
           padding: '48px',
+          gap: '20px',
         }}
       >
         <h2 className="text-2xl font-medium text-black text-center">
