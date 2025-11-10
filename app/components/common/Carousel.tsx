@@ -22,11 +22,11 @@ export const Carousel: React.FC<CarouselProps> = ({
   const [touchEnd, setTouchEnd] = useState(0);
 
   const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % slides.length);
+    setCurrentIndex(prev => (prev + 1) % slides.length);
   }, [slides.length]);
 
   const prevSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+    setCurrentIndex(prev => (prev - 1 + slides.length) % slides.length);
   }, [slides.length]);
 
   const goToSlide = (index: number) => {
@@ -84,12 +84,7 @@ export const Carousel: React.FC<CarouselProps> = ({
             className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition-all z-10"
             aria-label="Previous slide"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -103,18 +98,8 @@ export const Carousel: React.FC<CarouselProps> = ({
             className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition-all z-10"
             aria-label="Next slide"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
         </>
@@ -127,9 +112,7 @@ export const Carousel: React.FC<CarouselProps> = ({
               key={index}
               onClick={() => goToSlide(index)}
               className={`w-2 h-2 rounded-full transition-all ${
-                index === currentIndex
-                  ? 'bg-[#a97ff2] w-8'
-                  : 'bg-gray-300 hover:bg-gray-400'
+                index === currentIndex ? 'bg-[#a97ff2] w-8' : 'bg-gray-300 hover:bg-gray-400'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

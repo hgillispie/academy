@@ -19,9 +19,7 @@ export function HomeContent() {
           gap: '20px',
         }}
       >
-        <h2 className="text-2xl font-medium text-black text-center">
-          Builder.io Certification
-        </h2>
+        <h2 className="text-2xl font-medium text-black text-center">Builder.io Certification</h2>
         <p className="text-[#374151] text-center text-base leading-6 max-w-2xl">
           Become a certified Builder.io expert and showcase your skills to potential employers.
         </p>
@@ -32,9 +30,7 @@ export function HomeContent() {
     // Upcoming Events Card
     <div key="events" className="w-full px-4 sm:px-8 md:px-12 lg:px-16">
       <div className="bg-[#FFEDD5] rounded-lg p-8 md:p-12 flex flex-col items-center justify-center gap-5 max-w-4xl mx-auto">
-        <h2 className="text-2xl font-medium text-black text-center">
-          Upcoming Events
-        </h2>
+        <h2 className="text-2xl font-medium text-black text-center">Upcoming Events</h2>
         <p className="text-[#374151] text-center text-base leading-6 max-w-2xl">
           Join our upcoming webinars and workshops to enhance your Builder.io knowledge.
         </p>
@@ -68,12 +64,7 @@ export function HomeContent() {
         </div>
 
         <div className="mb-12">
-          <Carousel
-            slides={carouselSlides}
-            autoPlay={5000}
-            showArrows={true}
-            showDots={true}
-          />
+          <Carousel slides={carouselSlides} autoPlay={5000} showArrows={true} showDots={true} />
         </div>
       </main>
 
