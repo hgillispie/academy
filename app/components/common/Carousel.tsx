@@ -2,14 +2,35 @@
 
 import { useState, useEffect, useCallback } from 'react';
 
+/**
+ * Props for the Carousel component
+ */
 interface CarouselProps {
+  /** Array of React nodes to display as carousel slides */
   slides: React.ReactNode[];
+  /** Auto-play interval in milliseconds. Set to 0 to disable auto-play. Default: 0 */
   autoPlay?: number;
+  /** Whether to show navigation arrows. Default: true */
   showArrows?: boolean;
+  /** Whether to show pagination dots. Default: true */
   showDots?: boolean;
+  /** Additional CSS classes to apply to the carousel container */
   className?: string;
 }
 
+/**
+ * Carousel component with support for auto-play, arrow navigation, dot pagination,
+ * and touch/swipe gestures for mobile devices.
+ *
+ * Features:
+ * - Infinite looping through slides
+ * - Auto-play with configurable interval
+ * - Previous/Next arrow buttons
+ * - Pagination dots with active state
+ * - Touch/swipe support for mobile (75px threshold)
+ * - Smooth CSS transitions between slides
+ * - Accessible with ARIA labels
+ */
 export const Carousel: React.FC<CarouselProps> = ({
   slides,
   autoPlay = 0,
@@ -17,22 +38,46 @@ export const Carousel: React.FC<CarouselProps> = ({
   showDots = true,
   className = '',
 }) => {
+  // Track the index of the currently visible slide
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Track touch coordinates for swipe gesture detection
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
 
+  /**
+   * Advances to the next slide in the carousel.
+   * Wraps around to the first slide after reaching the last slide.
+   * Uses useCallback to memoize the function and prevent unnecessary re-renders.
+   */
   const nextSlide = useCallback(() => {
-    setCurrentIndex(prev => (prev + 1) % slides.length);
+    setCurrentIndex((prev) => (prev + 1) % slides.length);
   }, [slides.length]);
 
+  /**
+   * Goes back to the previous slide in the carousel.
+   * Wraps around to the last slide when going back from the first slide.
+   * Uses useCallback to memoize the function and prevent unnecessary re-renders.
+   */
   const prevSlide = useCallback(() => {
-    setCurrentIndex(prev => (prev - 1 + slides.length) % slides.length);
+    setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
   }, [slides.length]);
 
+  /**
+   * Navigates directly to a specific slide by index.
+   * Used by pagination dots to jump to any slide.
+   *
+   * @param index - The zero-based index of the slide to navigate to
+   */
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
   };
 
+  /**
+   * Sets up auto-play functionality if enabled.
+   * Creates an interval that advances to the next slide at the specified interval.
+   * Cleans up the interval when the component unmounts or dependencies change.
+   */
   useEffect(() => {
     if (autoPlay > 0) {
       const interval = setInterval(nextSlide, autoPlay);
@@ -40,18 +85,34 @@ export const Carousel: React.FC<CarouselProps> = ({
     }
   }, [autoPlay, nextSlide]);
 
+  /**
+   * Records the initial X coordinate when a touch gesture starts.
+   * Used to calculate swipe distance and direction.
+   */
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
   };
 
+  /**
+   * Records the current X coordinate as the user moves their finger.
+   * Updated continuously during the swipe gesture.
+   */
   const handleTouchMove = (e: React.TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
+  /**
+   * Handles the end of a touch gesture and determines if a swipe occurred.
+   * If the swipe distance exceeds 75px, navigates to the next or previous slide.
+   * - Swipe left (touchStart > touchEnd + 75): Next slide
+   * - Swipe right (touchStart < touchEnd - 75): Previous slide
+   */
   const handleTouchEnd = () => {
+    // Swiped left - go to next slide
     if (touchStart - touchEnd > 75) {
       nextSlide();
     }
+    // Swiped right - go to previous slide
     if (touchStart - touchEnd < -75) {
       prevSlide();
     }
