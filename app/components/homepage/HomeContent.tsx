@@ -8,8 +8,16 @@ import { takeSurvey } from './takeSurvey';
 export function HomeContent() {
   const carouselSlides = [
     // Builder.io Certification Card
-    <div key="certification" className="w-full px-4 sm:px-8 md:px-12 lg:px-16">
-      <div className="bg-[#E6F1FF] rounded-lg p-8 md:p-12 flex flex-col items-center justify-center gap-5 max-w-4xl mx-auto">
+    <div key="certification" className="w-full px-16">
+      <div
+        className="rounded-lg p-12 flex flex-col items-center justify-center gap-5 mx-auto flex flex-col items-center justify-center"
+        style={{
+          backgroundColor: 'rgba(74, 226, 226, 0.72)',
+          borderRadius: '8px',
+          maxWidth: '896px',
+          padding: '48px',
+        }}
+      >
         <h2 className="text-2xl font-medium text-black text-center">
           Builder.io Certification
         </h2>
