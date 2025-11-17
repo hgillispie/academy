@@ -10,7 +10,7 @@ export function HomeContent() {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <main className="flex-grow flex flex-col max-w-[1030px] w-full mx-auto px-6 py-12">
-        <h1 className="text-[42px] font-normal text-black mb-12 text-center">
+        <h1 className="text-[42px] font-semibold text-[#9013fe] mb-12 text-center">
           Welcome to Builder Academy
         </h1>
 
