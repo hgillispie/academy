@@ -15,7 +15,7 @@ export function Carousel({ children, autoPlay = true, interval = 5000 }: Carouse
     if (!autoPlay) return;
 
     const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % children.length);
+      setCurrentIndex(prevIndex => (prevIndex + 1) % children.length);
     }, interval);
 
     return () => clearInterval(timer);
@@ -26,11 +26,11 @@ export function Carousel({ children, autoPlay = true, interval = 5000 }: Carouse
   };
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + children.length) % children.length);
+    setCurrentIndex(prevIndex => (prevIndex - 1 + children.length) % children.length);
   };
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % children.length);
+    setCurrentIndex(prevIndex => (prevIndex + 1) % children.length);
   };
 
   return (
