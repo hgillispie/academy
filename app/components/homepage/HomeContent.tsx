@@ -8,7 +8,10 @@ export function HomeContent() {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <main className="flex-grow flex flex-col max-w-[1030px] w-full mx-auto px-6 py-12">
-        <h1 className="text-[42px] font-normal text-black mb-12 text-center">
+        <h1
+          className="text-[42px] font-normal mb-12 text-center"
+          style={{ color: 'rgba(144, 19, 254, 1)' }}
+        >
           Welcome to Builder Academy
         </h1>
 
